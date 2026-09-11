@@ -1,86 +1,123 @@
-# Codexpiator
+<div align="center">
 
-An extremely complete Claude Code plugin for vibe coders, software
-engineers, and frontend/backend developers. Codexpiator is a router
-skill plus eight topic skills covering frontend, backend, security,
-testing, architecture, devops, git/DX, and AI-integration practice —
-organized as many small, single-purpose files instead of one giant
-document.
+# 🧙‍♂️ Codexpiator
 
-It also knows when a more specialized external skill (visual design,
-motion, security review, ...) would serve you better than its own
-guidance: it checks whether that skill is available in your
-environment, tells you plainly if it isn't (and what it would have
-given you), and falls back to its own condensed guidance rather than
-blocking you.
+**The extremely complete Claude Code toolkit for vibe coders & real-world engineers.**
 
-## What's inside
+Frontend · Backend · Security · Testing · Architecture · DevOps · Git/DX · AI Integration — one plugin, nine skills, zero fluff.
 
-### Router
+[![License: MIT](https://img.shields.io/github/license/emanuelegreco29/codexpiator?color=blue)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)](.claude-plugin/plugin.json)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-6c47ff)](https://github.com/emanuelegreco29/codexpiator)
+[![Skills](https://img.shields.io/badge/skills-9-orange)](#-topic-skills)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4)](https://github.com/emanuelegreco29/codexpiator/pulls)
 
-- **codexpiator** — entry point. Classifies your request and points
-  you at the right skill below, or dispatches straight to it.
+</div>
 
-### Topic skills
+---
+
+Codexpiator is a router skill plus eight topic skills covering the
+full span of shipping real software — organized as dozens of small,
+single-purpose files instead of one giant wall of advice. It knows its
+own limits too: when a more specialized external skill (visual design,
+motion, a deep security audit, ...) would serve you better, it checks
+whether that skill is available, tells you plainly if it isn't (and
+what it would have given you), and falls back to its own condensed
+guidance instead of blocking you.
+
+## 📖 Table of contents
+
+- [What's inside](#-whats-inside)
+- [Topic skills](#-topic-skills)
+- [Commands](#-commands)
+- [Agent](#-agent)
+- [External skills it plugs into](#-external-skills-it-plugs-into)
+- [Stack policy](#-stack-policy)
+- [Installing](#-installing)
+
+## 🧩 What's inside
+
+| Component | Count | Purpose |
+|---|---|---|
+| 🧭 Router skill | 1 | Classifies a request and dispatches to the right skill/file |
+| 📚 Topic skills | 8 | Deep, single-purpose guidance per engineering domain |
+| ⚡ Slash commands | 3 | Audit, setup, and review workflows |
+| 🤖 Subagent | 1 | Isolated, read-only multi-file reviewer |
+
+## 📚 Topic skills
 
 | Skill | Covers |
 |---|---|
-| `codexpiator-frontend` | Component architecture, state management, styling/CSS, forms & validation, routing, responsive/mobile, frontend performance, frontend testing, accessibility |
-| `codexpiator-backend` | API design, data modeling & DB, auth & authorization, error handling & logging, caching, background jobs & queues, resilience & rate limiting, backend performance, backend testing |
-| `codexpiator-security` | Secure coding checklist, authn/authz patterns, input validation & injection, secrets & config management, dependency & supply-chain risk |
-| `codexpiator-testing-qa` | Testing pyramid & strategy, TDD workflow, mocking & test data, CI quality gates |
-| `codexpiator-architecture` | Project structure conventions, design patterns catalog, API contracts & versioning, scalability trade-offs, monolith vs microservices |
-| `codexpiator-devops` | CI/CD pipelines, environments & config, containerization, observability & monitoring, incident response & rollback, deployment platforms |
-| `codexpiator-dx-git` | Git workflow & branching, commit/PR conventions, code review checklist, documentation practices, repo hygiene & onboarding |
-| `codexpiator-ai-integration` | LLM integration patterns, prompt engineering basics, agentic/tool-use safety, MCP usage & recommendations |
+| 🎨 `codexpiator-frontend` | Component architecture, state management, styling/CSS, forms & validation, routing, responsive/mobile, performance, accessibility, SEO & AI-search visibility (GEO) |
+| ⚙️ `codexpiator-backend` | API design, data modeling & DB, auth & authorization, error handling & logging, caching, background jobs & queues, resilience & rate limiting, performance, testing |
+| 🔒 `codexpiator-security` | Secure coding checklist, authn/authz hardening, injection defense (SQLi/XSS/CSRF/SSRF/...), secrets & config, dependency/supply-chain risk, infra & access control, business-logic/webhook security, security testing |
+| ✅ `codexpiator-testing-qa` | Testing pyramid & strategy, TDD workflow, mocking & test data, CI quality gates |
+| 🏗️ `codexpiator-architecture` | Project structure conventions, design patterns catalog, API contracts & versioning, scalability trade-offs, monolith vs microservices |
+| 🚀 `codexpiator-devops` | CI/CD pipelines, environments & config, containerization, observability & monitoring, incident response & rollback, deployment platforms |
+| 🌿 `codexpiator-dx-git` | Git workflow & branching, commit/PR conventions, code review checklist, documentation practices, repo hygiene & onboarding |
+| 🧠 `codexpiator-ai-integration` | LLM integration patterns, prompt engineering, agentic/tool-use safety (prompt injection, permissions), MCP usage & recommendations |
 
-### Commands
+## ⚡ Commands
 
-- `/codexpiator-audit` — full frontend + backend + security + testing
-  audit of the current project, run through the `codexpiator-reviewer`
-  agent so it doesn't fill up your main conversation.
-- `/codexpiator-setup` — bootstraps baseline structure/conventions for
-  a new project.
-- `/codexpiator-review` — targeted review of a diff/PR against
-  Codexpiator's own checklists (complements, doesn't replace,
-  `/code-review` and `security-review`).
+| Command | What it does |
+|---|---|
+| `/codexpiator-audit` | Full frontend + backend + security + testing audit, run through the `codexpiator-reviewer` agent so it never floods your main conversation |
+| `/codexpiator-setup` | Bootstraps baseline structure and conventions for a project |
+| `/codexpiator-review` | Targeted review of a diff/PR against Codexpiator's own checklists — complements, never replaces, `/code-review` and `security-review` |
 
-### Agent
+## 🤖 Agent
 
-- `codexpiator-reviewer` — read-only subagent used by the two audit
-  commands above for isolated, multi-file review work.
+- **`codexpiator-reviewer`** — read-only subagent behind the two audit
+  commands above. No write access, ever — it reports findings, it
+  doesn't touch your code.
 
-## External skills it plugs into
+## 🔌 External skills it plugs into
 
-Codexpiator checks for these when relevant and tells you how to get
-them if they're missing — see `shared/external-skills-registry.md`
-for the full behavior and honest caveats about which install paths are
+Codexpiator checks for these when relevant and tells you exactly how
+to get them if they're missing — see
+[`shared/external-skills-registry.md`](shared/external-skills-registry.md)
+for the full behavior and honest notes on which install paths are
 actually confirmed:
 
-- `security-review` — deep security audits
-- `frontend-design` — distinctive, non-generic UI implementation
-- `design-motion-principles`, `impeccable`, `design-taste-frontend`,
-  `web-design-guidelines`, `redesign-existing-projects` — design/UX
-  specialists (availability varies by environment; Codexpiator falls
-  back to its own guidance when one isn't installed)
+| Skill | For |
+|---|---|
+| `security-review` | Deep, specialized security audits |
+| `frontend-design` | Distinctive, non-generic UI implementation |
+| `design-motion-principles` | Motion & interaction design |
+| `impeccable` | Broad frontend polish/critique pass |
+| `design-taste-frontend` | Anti-template landing pages & portfolios |
+| `web-design-guidelines` | Interface-guideline compliance audits |
+| `redesign-existing-projects` | Upgrading an existing UI without breaking it |
+| `ui-ux-pro-max` | General high-end UI/UX assistance |
 
-## Stack policy
+Availability varies by environment — Codexpiator always falls back to
+its own guidance when one isn't installed, never leaving you blocked.
 
-Content is stack-agnostic by default: universal principles first,
-with explicit "if you use X" call-outs for the most common modern
-stacks (React/Next.js, Vue/Nuxt, Node/Express, Python/FastAPI, Go).
-See `shared/stack-recommendations.md`.
+## 🧱 Stack policy
 
-## Installing
+Universal principles first, always — with explicit "if you use X"
+call-outs for the most common modern stacks (React/Next.js, Vue/Nuxt,
+Node/Express, Python/FastAPI, Go). See
+[`shared/stack-recommendations.md`](shared/stack-recommendations.md).
+
+## 🚀 Installing
 
 ```
 /plugin marketplace add emanuelegreco29/codexpiator
 /plugin install codexpiator
 ```
 
-Or straight from a local clone, if you're working on it directly:
+Working on it directly? Install straight from your local clone:
 
 ```
 /plugin marketplace add /absolute/path/to/codexpiator
 /plugin install codexpiator
 ```
+
+---
+
+<div align="center">
+
+Made for people who ship real software, one skill at a time.
+
+</div>
