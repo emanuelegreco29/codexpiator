@@ -25,15 +25,29 @@ whether that skill is available, tells you plainly if it isn't (and
 what it would have given you), and falls back to its own condensed
 guidance instead of blocking you.
 
+## 🚀 Installing
+
+```
+/plugin marketplace add emanuelegreco29/codexpiator
+/plugin install codexpiator
+```
+
+Working on it directly? Install straight from your local clone:
+
+```
+/plugin marketplace add /absolute/path/to/codexpiator
+/plugin install codexpiator
+```
+
 ## 📖 Table of contents
 
+- [Installing](#-installing)
 - [What's inside](#-whats-inside)
 - [Topic skills](#-topic-skills)
 - [Commands](#-commands)
 - [Agent](#-agent)
 - [External skills it plugs into](#-external-skills-it-plugs-into)
 - [Stack policy](#-stack-policy)
-- [Installing](#-installing)
 
 ## 🧩 What's inside
 
@@ -99,20 +113,6 @@ Universal principles first, always — with explicit "if you use X"
 call-outs for the most common modern stacks (React/Next.js, Vue/Nuxt,
 Node/Express, Python/FastAPI, Go). See
 [`shared/stack-recommendations.md`](shared/stack-recommendations.md).
-
-## 🚀 Installing
-
-```
-/plugin marketplace add emanuelegreco29/codexpiator
-/plugin install codexpiator
-```
-
-Working on it directly? Install straight from your local clone:
-
-```
-/plugin marketplace add /absolute/path/to/codexpiator
-/plugin install codexpiator
-```
 
 ---
 
