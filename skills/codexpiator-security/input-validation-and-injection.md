@@ -42,6 +42,32 @@ anywhere that default is deliberately bypassed (`dangerouslySetInnerHTML`,
 `v-html`, `innerHTML`, raw template interpolation marked "safe") for
 content that isn't fully trusted and sanitized first.
 
+**Stored XSS specifically** — a payload saved to the database (a
+comment, a profile field, any user-generated content) and rendered
+later to *other* users — is more severe than reflected XSS precisely
+because it persists and hits every viewer, not just whoever clicked a
+crafted link. Escaping at render time is still required regardless of
+source, but also sanitize at the point of storage (see "Sanitize
+before storing" below) so every future consumer of that data — an
+admin panel, an export, a different page entirely — starts from
+already-safe content instead of each one needing to remember to escape
+correctly.
+
+## Misused dynamic conditions
+
+Be wary of any conditional/authorization/query-building logic whose
+*shape* (not just its values) is constructed from user input — a
+filter field name chosen by the client, a dynamically-built database
+query condition, a permission check assembled from a client-supplied
+key, `eval`-style dynamic code execution, or dynamic property access
+using a user-controlled key (which can lead to prototype pollution in
+languages/runtimes where that's possible). The risk isn't just wrong
+data — it's the logic itself being redirected into a code path or
+condition nobody intended to expose. Keep the *set of possible
+conditions/fields/keys* fixed and allowlisted in code; let user input
+only choose among that fixed set of already-safe options, never define
+new ones.
+
 ## CSRF (Cross-Site Request Forgery)
 
 For any state-changing request authenticated via cookies, add CSRF

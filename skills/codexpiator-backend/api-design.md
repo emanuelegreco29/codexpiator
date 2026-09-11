@@ -74,6 +74,20 @@ variables rather than hardcoded, so the same codebase runs correctly
 across dev/staging/prod without code changes (see
 `codexpiator-devops/environments-and-config.md`).
 
+## Avoid bloated API contracts
+
+Return only the fields a response actually needs to serve its
+consumers — not an entire internal database row serialized as-is
+"because it's convenient." A bloated contract (unused fields, internal
+implementation detail, other users' data nested in a response by
+accident) is both a maintenance burden (every extra field is now part
+of the contract per `codexpiator-architecture/api-contracts-and-versioning.md`)
+and a security exposure risk: an internal field never meant to be
+public can leak simply because nobody trimmed the response shape. Define
+each endpoint's response shape deliberately (an explicit serializer/
+DTO/response schema), not as a direct pass-through of an internal
+model.
+
 ## GraphQL/RPC vs REST
 
 GraphQL or RPC-style APIs earn their complexity when clients need to
