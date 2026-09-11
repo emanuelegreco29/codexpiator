@@ -1,14 +1,14 @@
 {
   "name": "codexpiator-marketplace",
   "owner": {
-    "name": "Codexpiator"
+    "name": "Emanuele Greco"
   },
   "plugins": [
     {
       "name": "codexpiator",
       "description": "Extremely complete reference toolkit for vibe coders and developers: frontend, backend, security, testing, architecture, devops, git/DX, and AI-integration guidance.",
       "author": {
-        "name": "Codexpiator"
+        "name": "Emanuele Greco"
       },
       "source": "./",
       "category": "development"
