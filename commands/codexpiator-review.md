@@ -1,5 +1,5 @@
 ---
-description: Review the current diff or a PR against Codexpiator's checklists
+description: Review a diff or PR against Codexpiator's checklists
 argument-hint: [pr-number-or-branch (optional)]
 allowed-tools: Read, Grep, Glob, Bash(git:*), Bash(gh:*)
 ---

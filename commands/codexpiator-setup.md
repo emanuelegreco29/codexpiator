@@ -1,5 +1,5 @@
 ---
-description: Bootstrap baseline project structure using Codexpiator's conventions
+description: Bootstrap project structure using Codexpiator conventions
 argument-hint: [stack (optional)]
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion
 ---

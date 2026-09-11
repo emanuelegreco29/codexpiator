@@ -1,5 +1,5 @@
 ---
-description: Full frontend/backend/security/testing audit via the reviewer agent
+description: Full frontend/backend/security/testing audit
 allowed-tools: Read, Grep, Glob, Bash(git:*)
 ---
 
