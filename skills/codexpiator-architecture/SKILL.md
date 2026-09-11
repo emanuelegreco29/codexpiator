@@ -1,0 +1,17 @@
+---
+name: codexpiator-architecture
+description: Software architecture guidance - project structure conventions, design patterns catalog, API contracts and versioning, scalability trade-offs, and monolith vs microservices. Use when structuring a new project, deciding how to split code, or making a structural/scaling decision.
+---
+
+# Codexpiator Architecture
+
+Single-purpose reference files for structural and architectural
+decisions.
+
+| File | Read this when... |
+|---|---|
+| `project-structure-conventions.md` | Laying out folders, monorepo vs polyrepo |
+| `design-patterns-catalog.md` | Deciding whether a pattern (DI, repository, strategy, observer) fits |
+| `api-contracts-and-versioning.md` | Changing a contract other consumers depend on |
+| `scalability-and-tradeoffs.md` | Deciding if/how to scale, avoiding premature scaling |
+| `monolith-vs-microservices.md` | Deciding whether to split a service |
