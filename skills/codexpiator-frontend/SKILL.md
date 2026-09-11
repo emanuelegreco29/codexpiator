@@ -21,6 +21,7 @@ trying to hold all of it in one place.
 | `frontend-testing.md` | What to unit/integration/E2E test on the frontend |
 | `accessibility.md` | Semantic HTML, ARIA, keyboard nav, contrast, focus management |
 | `seo-and-launch-checklist.md` | Pre-launch pass: metadata, SEO tags, legal pages, conversion essentials |
+| `seo-strategy-and-ai-visibility.md` | Deep SEO strategy + GEO: ranking in Google/Bing/DuckDuckGo and being cited by AI answer engines |
 | `external-skills-map.md` | Whether a specialized design skill should lead instead |
 
 ## Before any visually-led answer
