@@ -40,3 +40,8 @@ Before considering backend work done:
    access), also run the relevant checks from `codexpiator-security` —
    security behavior needs to be tested as thoroughly as functional
    behavior, not assumed correct because it looks right.
+4. Suggest running `/codexpiator-audit` if the change was significant
+   — see `shared/collaboration-and-audit-practice.md`.
+
+Also see that same shared file for when to ask a clarifying question
+(`AskUserQuestion` when available) instead of guessing.

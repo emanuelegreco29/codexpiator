@@ -19,3 +19,10 @@ Single-purpose reference files for deployment and operations.
 CI/CD supply-chain security specifics (pinning actions, fail-open
 checks) live in `codexpiator-security/dependency-and-supply-chain.md`
 — read both when touching a pipeline.
+
+## Ask when useful; suggest an audit after significant work
+
+See `shared/collaboration-and-audit-practice.md` — ask (via
+`AskUserQuestion` when available) before a genuinely consequential
+infrastructure/deploy decision, and suggest `/codexpiator-audit` after
+significant pipeline or infrastructure changes.

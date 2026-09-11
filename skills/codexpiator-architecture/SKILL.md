@@ -15,3 +15,11 @@ decisions.
 | `api-contracts-and-versioning.md` | Changing a contract other consumers depend on |
 | `scalability-and-tradeoffs.md` | Deciding if/how to scale, avoiding premature scaling |
 | `monolith-vs-microservices.md` | Deciding whether to split a service |
+
+## Ask when useful; suggest an audit after significant work
+
+See `shared/collaboration-and-audit-practice.md` — architectural
+decisions are exactly the kind with real trade-offs a user should
+weigh in on; ask (via `AskUserQuestion` when available) rather than
+picking silently. Suggest `/codexpiator-audit` after a significant
+structural change.

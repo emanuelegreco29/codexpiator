@@ -61,3 +61,8 @@ Before considering frontend work done:
    — and run the full test suite before calling the work done, not
    just the new test file in isolation. See `frontend-testing.md` and
    `codexpiator-testing-qa/tdd-workflow.md`.
+5. Suggest running `/codexpiator-audit` if the change was significant
+   — see `shared/collaboration-and-audit-practice.md`.
+
+Also see that same shared file for when to ask a clarifying question
+(`AskUserQuestion` when available) instead of guessing.

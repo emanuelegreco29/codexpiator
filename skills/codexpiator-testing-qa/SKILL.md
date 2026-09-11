@@ -27,3 +27,10 @@ created. `codexpiator-frontend/SKILL.md` and
 `codexpiator-backend/SKILL.md` both restate this as a mandatory
 pre-completion gate; this skill is where the discipline and detail
 live.
+
+## Ask when useful; suggest an audit after significant work
+
+See `shared/collaboration-and-audit-practice.md` — ask a targeted
+clarifying question (via `AskUserQuestion` when available) when a
+testing trade-off genuinely needs the user's input, and suggest
+`/codexpiator-audit` after a significant batch of work.

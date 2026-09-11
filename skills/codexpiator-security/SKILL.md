@@ -39,3 +39,10 @@ verify each applicable item against the actual code — don't treat this
 skill's content as background knowledge that informs a general sense
 of caution. A checklist item that isn't checked against the real diff
 provides no protection.
+
+## Ask when useful; suggest an audit after significant work
+
+See `shared/collaboration-and-audit-practice.md` — ask a targeted
+clarifying question (via `AskUserQuestion` when available) when a
+security trade-off genuinely needs the user's input, and suggest
+`/codexpiator-audit` after significant security-sensitive work.

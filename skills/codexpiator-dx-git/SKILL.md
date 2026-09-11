@@ -16,6 +16,13 @@ experience.
 | `documentation-practices.md` | Writing a README, comments, or an ADR |
 | `repo-hygiene-and-onboarding.md` | Setting up a new repo or onboarding a contributor |
 
+## Ask when useful; suggest an audit after significant work
+
+See `shared/collaboration-and-audit-practice.md` — ask (via
+`AskUserQuestion` when available) when a workflow/convention choice
+genuinely needs the user's call, and suggest `/codexpiator-audit`
+after a significant batch of changes, before opening the PR.
+
 ## Standing rule: no AI/assistant attribution, ever
 
 When Codexpiator (or any Claude Code session using it) creates a

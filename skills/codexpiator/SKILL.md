@@ -34,6 +34,13 @@ A request can span more than one domain (e.g. "add a login feature"
 touches frontend, backend, and security). In that case, consult each
 relevant skill for its slice rather than picking just one.
 
+## Ask when useful; suggest an audit after significant work
+
+See `shared/collaboration-and-audit-practice.md` — ask a targeted
+clarifying question (via `AskUserQuestion` when available) when a
+request has real ambiguity, and suggest `/codexpiator-audit` after
+completing significant work. Every `codexpiator-*` skill follows this.
+
 ## Before answering anything design- or security-audit-shaped
 
 If the request involves visual design, motion/animation, a broad UI
