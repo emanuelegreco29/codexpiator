@@ -1,6 +1,6 @@
 {
   "name": "codexpiator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Extremely complete reference toolkit for vibe coders and developers: frontend, backend, security, testing, architecture, devops, git/DX, and AI-integration guidance, with routing to specialized design/security skills when available.",
   "author": {
     "name": "Emanuele Greco"
