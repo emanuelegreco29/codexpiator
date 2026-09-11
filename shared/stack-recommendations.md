@@ -60,6 +60,13 @@ instead of repeating stack idioms in every file that touches them.
   fast enough to run on every save and in CI with no excuse to skip
   it. Fix or explicitly, narrowly suppress (never blanket-disable)
   what it flags before considering Python backend work done.
+  **Before writing any Python code on a project without Ruff already
+  configured**, check (via `WebSearch`, with the user's permission
+  per `shared/collaboration-and-audit-practice.md`) the current
+  recommended Ruff rule set and set up `pyproject.toml`/`ruff.toml`
+  with it first — Ruff's rule categories and defaults evolve, so
+  don't configure it from memory of an older recommended set when a
+  quick check can confirm what's current.
 - Pydantic models for request/response schemas double as validation
   and documentation — define the schema once, don't hand-validate
   fields separately.
