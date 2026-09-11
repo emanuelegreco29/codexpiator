@@ -60,10 +60,10 @@ https://github.com/voltagent/awesome-design-md — a curated collection
 of design-principle documents — rather than guessing from memory when
 an authoritative written reference is one fetch away.
 
-Don't bulk-download the whole collection. Dispatch a subagent to
-browse the repo's index, pick the docs that actually match the current
-project's scope (its stack, its kind of UI, the specific concern at
-hand), and save only those selected docs to
+Don't bulk-download the whole collection. Use the Task/Agent tool to
+launch a subagent that browses the repo's index and picks the docs
+that actually match the current project's scope (its stack, its kind
+of UI, the specific concern at hand); save only those selected docs to
 `.codexpiator/design-refs/` (see
 `shared/long-task-memory-and-superpowers.md` for the shared
 `.codexpiator/` directory convention — gitignore it immediately if

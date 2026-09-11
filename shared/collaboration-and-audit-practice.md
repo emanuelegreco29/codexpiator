@@ -1,19 +1,56 @@
 # Collaboration & Audit Practice
 
-Two behaviors every `codexpiator-*` skill should follow, referenced
-from here rather than repeated in each skill's own file.
+Behaviors every `codexpiator-*` skill should follow, referenced from
+here rather than repeated in each skill's own file.
+
+## Named tools and skills mean a real tool call, never narration
+
+Everywhere this plugin's content names a tool (`AskUserQuestion`,
+`WebSearch`, the Task/Agent tool for launching a subagent) or another
+skill by name (a sibling `codexpiator-*` skill, an external skill like
+`security-review`), that is an instruction to actually invoke it
+through the harness's real mechanism for doing so — not to read the
+referenced file directly, not to paraphrase the action in prose, and
+not to simulate the outcome narratively. Concretely:
+
+- To bring in **another skill's own entry point** (its `SKILL.md`,
+  not one of its plain sibling resource files), invoke that skill by
+  name through whatever mechanism the environment exposes for skill
+  invocation — the same way a `superpowers:*` skill gets invoked —
+  rather than opening its `SKILL.md` with a file-read tool. A plain
+  sibling resource file *within the currently-active skill*
+  (`component-architecture.md` referenced from `codexpiator-frontend`,
+  for example) is meant to be read directly — that distinction is
+  what separates a resource file from a separate skill.
+- To run the **`codexpiator-reviewer` agent** (or any subagent), use
+  the environment's actual subagent-launching tool (commonly called
+  the Task or Agent tool) — don't describe what the agent would find
+  instead of actually launching it.
+- To **ask the user something**, call `AskUserQuestion` (or the
+  equivalent interactive-question tool the environment provides) —
+  don't just phrase a question in your own reply and assume that
+  counts as the structured ask this practice calls for, when the tool
+  is actually available.
+- To **check current information**, call `WebSearch` (or the
+  environment's equivalent) — don't answer as if you'd searched when
+  you haven't.
+
+If a named tool or skill genuinely isn't available in the environment,
+say so plainly and fall back per the relevant skill's own
+fallback guidance — but check for real availability first rather than
+assuming absence and quietly substituting narration for action.
 
 ## Ask when it's genuinely useful, not by default
 
 When a request has more than one reasonable approach, an ambiguous
 requirement, or a decision only the user can actually make (a
 trade-off between two valid designs, a missing piece of business
-context), ask — using `AskUserQuestion` when that tool is available,
-or a direct clarifying question otherwise. Don't ask for things
-answerable by reading the code or already stated in the conversation,
-and don't multiply questions past what's actually blocking — one
-targeted question beats several vague ones. The goal is resolving
-real ambiguity, not performing thoroughness.
+context), call `AskUserQuestion` when it's available, or ask a direct
+clarifying question otherwise. Don't ask for things answerable by
+reading the code or already stated in the conversation, and don't
+multiply questions past what's actually blocking — one targeted
+question beats several vague ones. The goal is resolving real
+ambiguity, not performing thoroughness.
 
 ## Stay current via WebSearch, with permission
 
@@ -25,7 +62,7 @@ one specifically moves fast), and framework-specific best practices
 all shift over time. When a task would clearly benefit from
 up-to-date information beyond this skill's own content — a
 fast-moving area, or a claim worth double-checking against current
-sources — use `WebSearch` (when available) to check, but ask the
+sources — call `WebSearch` when it's available to check, but ask the
 user's permission first rather than searching unprompted. Fold
 genuinely new, confirmed information into the answer; don't treat a
 single search result as more authoritative than this skill's

@@ -21,8 +21,9 @@ Read the specific file below for the concern at hand.
 | `backend-testing.md` | Unit vs integration tests, test data for the backend |
 
 For deeper security hardening beyond the how-to in
-`auth-and-authorization.md`, see `codexpiator-security` — that skill
-covers the threat model, this one covers the implementation approach.
+`auth-and-authorization.md`, invoke the `codexpiator-security` skill —
+that skill covers the threat model, this one covers the implementation
+approach.
 
 ## Mandatory pre-completion gate for any backend change
 
@@ -37,9 +38,10 @@ Before considering backend work done:
    just the new tests in isolation. See `backend-testing.md` and
    `codexpiator-testing-qa/tdd-workflow.md`.
 3. For anything security-sensitive (auth, input handling, data
-   access), also run the relevant checks from `codexpiator-security` —
-   security behavior needs to be tested as thoroughly as functional
-   behavior, not assumed correct because it looks right.
+   access), also invoke the `codexpiator-security` skill and run its
+   relevant checks — security behavior needs to be tested as
+   thoroughly as functional behavior, not assumed correct because it
+   looks right.
 4. Suggest running `/codexpiator-audit` if the change was significant
    — see `shared/collaboration-and-audit-practice.md`.
 

@@ -25,10 +25,13 @@ from here directly with duplicated content.
 | Git / DX (workflow, commits, PRs, review, docs, onboarding) | `codexpiator-dx-git` | "branching strategy", "write a commit message", "review this PR", "onboarding docs" |
 | AI integration (LLM patterns, prompting, agent safety, MCP) | `codexpiator-ai-integration` | "integrate an LLM", "prompt engineering", "is this agent safe", "which MCP server" |
 
-Read the matching skill's own `SKILL.md` and let it point you at its
-specific resource file(s) — don't answer from this table's one-line
-descriptions alone, and don't copy a topic skill's content into this
-router.
+**Invoke the matching skill** (through the environment's actual skill-
+invocation mechanism, by name — e.g. `codexpiator-frontend` — the same
+way a `superpowers:*` skill gets invoked) rather than opening its
+`SKILL.md` with a file-read tool. Invoking it properly lets it
+activate and point itself at its own specific resource file(s); don't
+answer from this table's one-line descriptions alone, and don't copy a
+topic skill's content into this router.
 
 A request can span more than one domain (e.g. "add a login feature"
 touches frontend, backend, and security). In that case, consult each

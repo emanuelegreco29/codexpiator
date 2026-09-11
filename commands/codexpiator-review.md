@@ -1,7 +1,7 @@
 ---
 description: Review a diff or PR against Codexpiator's checklists
 argument-hint: [pr-number-or-branch (optional)]
-allowed-tools: Read, Grep, Glob, Bash(git:*), Bash(gh:*)
+allowed-tools: Skill, Read, Grep, Glob, Bash(git:*), Bash(gh:*)
 ---
 
 Review a change against Codexpiator's own checklists — complementary
@@ -12,14 +12,15 @@ those are available.
    branch to review (`gh pr diff $1` or `git diff main...$1` as
    appropriate); otherwise review the current uncommitted diff
    (`git diff` / `git diff --staged`).
-2. Read `codexpiator-dx-git/code-review-checklist.md` and apply it.
+2. Invoke the `codexpiator-dx-git` skill and apply its code review
+   checklist.
 3. For any changed file touching auth, user input, secrets, payments,
-   or infrastructure config, also apply the relevant checklist(s) from
-   `codexpiator-security`.
-4. For any changed frontend/backend code, spot-check against the
-   relevant `codexpiator-frontend`/`codexpiator-backend` file for the
-   specific concern touched (don't re-read every file in those skills
-   — only what's relevant to what changed).
+   or infrastructure config, also invoke `codexpiator-security` and
+   apply its relevant checklist(s).
+4. For any changed frontend/backend code, invoke
+   `codexpiator-frontend`/`codexpiator-backend` and spot-check against
+   the specific concern touched (don't pull in everything either skill
+   covers — only what's relevant to what changed).
 5. Confirm no unwanted AI/assistant attribution was left in any commit
    message or PR description in scope (per
    `codexpiator-dx-git/commit-and-pr-conventions.md`).
