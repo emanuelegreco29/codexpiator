@@ -73,18 +73,14 @@ See `shared/stack-recommendations.md`.
 
 ## Installing
 
-This plugin isn't published yet — install it straight from your local
-clone:
-
 ```
-/plugin marketplace add /absolute/path/to/Codexpiator
+/plugin marketplace add emanuelegreco29/codexpiator
 /plugin install codexpiator
 ```
 
-Once it's pushed to GitHub, the same flow works with the repo URL
-instead of a local path:
+Or straight from a local clone, if you're working on it directly:
 
 ```
-/plugin marketplace add <github-user>/Codexpiator
+/plugin marketplace add /absolute/path/to/codexpiator
 /plugin install codexpiator
 ```
