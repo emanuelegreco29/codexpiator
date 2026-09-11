@@ -1,5 +1,10 @@
 # API Contracts & Versioning
 
+This file covers contract *policy* — what counts as breaking, how to
+version, how to deprecate. For endpoint-level design itself (naming,
+pagination, status codes, response shape), see
+`codexpiator-backend/api-design.md`.
+
 ## A contract is a promise
 
 Once an endpoint has real consumers (an external client, a separate

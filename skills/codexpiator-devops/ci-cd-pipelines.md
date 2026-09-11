@@ -1,5 +1,10 @@
 # CI/CD Pipelines
 
+This file covers pipeline *structure*. For *what* should actually gate
+a merge (required checks vs. warnings) see
+`codexpiator-testing-qa/ci-quality-gates.md` — read both when setting
+up or changing CI/CD.
+
 ## Stage ordering: fail fast
 
 Order pipeline stages from cheapest/fastest to most expensive: lint/

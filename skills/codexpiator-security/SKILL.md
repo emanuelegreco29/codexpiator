@@ -1,6 +1,6 @@
 ---
 name: codexpiator-security
-description: Security guidance - secure coding checklist, authn/authz patterns, input validation and injection defense, secrets and config management, dependency and supply-chain risk, infrastructure and access control, business-logic and webhook security, and security testing. Use for any security-sensitive question or before shipping anything that touches auth, user input, payments, or infrastructure config.
+description: Security guidance - secure coding checklist, authn/authz threat-model and hardening (MFA, IDOR/BOLA, session fixation, password-reset abuse - see codexpiator-backend for base auth implementation), input validation and injection defense, secrets and config management, dependency and supply-chain risk, infrastructure and access control, business-logic/webhook security, AI/agent security (prompt injection, excessive AI permissions), and security testing. Use for any security-sensitive question or before shipping anything that touches auth, user input, payments, AI/agent features, or infrastructure config.
 ---
 
 # Codexpiator Security

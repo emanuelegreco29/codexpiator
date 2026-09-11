@@ -12,7 +12,7 @@ decisions.
 |---|---|
 | `project-structure-conventions.md` | Laying out folders, monorepo vs polyrepo |
 | `design-patterns-catalog.md` | Deciding whether a pattern (DI, repository, strategy, observer) fits |
-| `api-contracts-and-versioning.md` | Changing a contract other consumers depend on |
+| `api-contracts-and-versioning.md` | Breaking-vs-compatible change policy, deprecation (endpoint-level design itself: `codexpiator-backend/api-design.md`) |
 | `scalability-and-tradeoffs.md` | Deciding if/how to scale, avoiding premature scaling |
 | `monolith-vs-microservices.md` | Deciding whether to split a service |
 

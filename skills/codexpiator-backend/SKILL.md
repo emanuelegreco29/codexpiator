@@ -1,6 +1,6 @@
 ---
 name: codexpiator-backend
-description: Backend engineering guidance - API design, data modeling and databases, authentication and authorization, error handling and logging, caching, background jobs and queues, resilience and rate limiting, backend performance, and backend testing. Use for any server-side/API/data-layer question.
+description: Backend engineering guidance - API design and contracts, data modeling and databases, authentication and authorization implementation (sessions vs JWT, password hashing - see codexpiator-security for the threat-model/hardening side), error handling and logging, caching, background jobs and queues, resilience and rate limiting, backend performance, and backend testing. Use for any server-side/API/data-layer question.
 ---
 
 # Codexpiator Backend
@@ -10,7 +10,7 @@ Read the specific file below for the concern at hand.
 
 | File | Read this when... |
 |---|---|
-| `api-design.md` | Designing endpoints, naming, versioning, pagination |
+| `api-design.md` | Designing endpoints, naming, pagination, response shape (for breaking-change/versioning *policy*, see `codexpiator-architecture/api-contracts-and-versioning.md`) |
 | `data-modeling-and-db.md` | Schema design, indexing, migrations, SQL vs NoSQL |
 | `auth-and-authorization.md` | Authentication mechanism, session/token trade-offs, password storage |
 | `error-handling-and-logging.md` | Error taxonomy, structured logging, correlation IDs |

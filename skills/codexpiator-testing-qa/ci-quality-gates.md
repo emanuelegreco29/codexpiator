@@ -1,5 +1,10 @@
 # CI Quality Gates
 
+This file covers *what* should gate a merge. For pipeline *structure*
+— stage ordering, build-once-deploy-many, trunk-based development —
+see `codexpiator-devops/ci-cd-pipelines.md`. Read both when setting up
+or changing CI/CD; they're two halves of the same system.
+
 ## What should block a merge
 
 - The full test suite passes (not just the tests touched by the

@@ -1,6 +1,6 @@
 ---
 name: codexpiator-ai-integration
-description: AI/LLM integration guidance - LLM integration patterns, prompt engineering basics, agentic and tool-use safety, and MCP usage and recommendations. Use when integrating an LLM, building an AI feature or agent, writing prompts, or evaluating an MCP server.
+description: AI/LLM integration guidance - LLM integration patterns, prompt engineering basics, agentic and tool-use safety and security (prompt injection, excessive AI permissions, unvalidated AI output), and MCP usage and recommendations. Use when integrating an LLM, building an AI feature or agent, writing prompts, evaluating an MCP server, or assessing whether an AI/agent feature is safe.
 ---
 
 # Codexpiator AI Integration

@@ -17,7 +17,9 @@ first pass has already run:
   `commit-and-pr-conventions.md`)?
 - [ ] **Security red flags** — anything touching auth, user input,
   secrets, or infrastructure config gets a second look against
-  `codexpiator-security`'s checklists, not just a functional read.
+  `codexpiator-security`'s checklists (start with
+  `codexpiator-security/secure-coding-checklist.md`), not just a
+  functional read.
 - [ ] **Performance red flags** — an obviously expensive operation
   introduced in a hot path (an N+1 query, an unbounded loop over
   external calls) worth flagging even if it's not the PR's main

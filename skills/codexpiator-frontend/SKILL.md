@@ -1,6 +1,6 @@
 ---
 name: codexpiator-frontend
-description: Frontend engineering guidance - component architecture, state management, CSS/styling architecture, forms and validation, routing, responsive/mobile design, frontend performance, frontend testing, and accessibility. Use for any UI/component/frontend-structure question.
+description: Frontend engineering guidance - component architecture, state management, CSS/styling architecture, forms and validation, routing, responsive/mobile design, frontend performance, SEO/AI-visibility, and accessibility. Use for any UI/component/frontend-structure question, including what to test on the frontend (see codexpiator-testing-qa for general testing strategy/TDD discipline instead).
 ---
 
 # Codexpiator Frontend

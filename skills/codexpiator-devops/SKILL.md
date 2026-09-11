@@ -9,7 +9,7 @@ Single-purpose reference files for deployment and operations.
 
 | File | Read this when... |
 |---|---|
-| `ci-cd-pipelines.md` | Setting up or changing a build/deploy pipeline |
+| `ci-cd-pipelines.md` | Setting up or changing a build/deploy pipeline (what should gate the merge itself: `codexpiator-testing-qa/ci-quality-gates.md`) |
 | `environments-and-config.md` | Managing dev/staging/prod parity and config |
 | `containerization.md` | Writing or reviewing a Dockerfile |
 | `observability-and-monitoring.md` | Setting up logs/metrics/traces/alerts |

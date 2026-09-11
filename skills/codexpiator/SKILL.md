@@ -1,6 +1,6 @@
 ---
 name: codexpiator
-description: Entry point for the Codexpiator toolkit - routes frontend, backend, security, testing, architecture, devops, git/DX, and AI-integration questions to the right specialized skill, and checks whether a better external design/security skill should be used instead. Use when the request doesn't already name a specific codexpiator-* skill.
+description: Entry point for the Codexpiator toolkit. Use only when a software-engineering request's domain is ambiguous, spans multiple domains, or is exploratory - if it clearly matches one specific codexpiator-* skill's own description, prefer that skill directly instead.
 ---
 
 # Codexpiator Router
