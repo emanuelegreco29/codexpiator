@@ -55,3 +55,9 @@ Before considering frontend work done:
    work complete with unformatted code or type errors outstanding.
 3. Confirm new components/pages follow the folder-per-component
    colocation convention in `component-architecture.md`.
+4. **Write and run real tests for whatever was created or changed** —
+   not just the happy path, cover edge cases too (empty/loading/error
+   states, boundary inputs, keyboard-only interaction where relevant)
+   — and run the full test suite before calling the work done, not
+   just the new test file in isolation. See `frontend-testing.md` and
+   `codexpiator-testing-qa/tdd-workflow.md`.
