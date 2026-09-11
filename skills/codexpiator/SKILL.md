@@ -34,6 +34,15 @@ A request can span more than one domain (e.g. "add a login feature"
 touches frontend, backend, and security). In that case, consult each
 relevant skill for its slice rather than picking just one.
 
+## Long or complex work
+
+For anything substantial (multi-step, many files, spans multiple
+commits), see `shared/long-task-memory-and-superpowers.md` — write
+resumable progress memory to a gitignored project directory, and use
+`superpowers:*` skills (writing-plans, executing-plans,
+systematic-debugging, TDD, etc.) when available instead of improvising
+the process.
+
 ## Ask when useful; suggest an audit after significant work
 
 See `shared/collaboration-and-audit-practice.md` — ask a targeted

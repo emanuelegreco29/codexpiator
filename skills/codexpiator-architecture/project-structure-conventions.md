@@ -22,6 +22,14 @@ fully separate parallel test tree that mirrors the source tree — it's
 easier to notice a module has no tests, and to keep tests updated when
 the module changes, when they're not several directories away.
 
+## Resumable progress memory for long procedures
+
+For a long/complex procedure, don't rely on conversation context
+alone to survive an interruption — write resumable progress state to
+a gitignored project directory. See
+`shared/long-task-memory-and-superpowers.md` for the convention and
+when it's warranted (not for trivial changes).
+
 ## Consistent naming as a force multiplier
 
 Pick one naming convention per concept (how list-item components are

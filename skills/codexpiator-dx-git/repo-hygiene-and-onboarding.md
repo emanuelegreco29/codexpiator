@@ -22,13 +22,23 @@ Any directory a Claude Code skill, plugin, or AI coding tool creates
 as its own working/cache state — `.claude/`, `.superpowers/`,
 `.playwright/`, `.docs/` (a tool-generated dot-directory, distinct from
 a project's own plain `docs/` folder holding real authored content),
-and any similar tool-artifact directory a skill introduces — must be
+Codexpiator's own long-task progress-memory directory (see
+`shared/long-task-memory-and-superpowers.md` — gitignore it the moment
+it's created, not later), and any similar tool-artifact directory a
+skill introduces — must be
 added to `.gitignore` in every project this toolkit sets up or
 touches. Check for this explicitly whenever `/codexpiator-setup` runs
 or whenever a skill is observed creating a new such directory; add the
 missing entry immediately rather than letting tool-generated state get
 committed by accident. This is separate from, and doesn't affect,
 committing a project's own deliberately-authored documentation.
+
+This includes Playwright's own output specifically: `test-results/`,
+`playwright-report/`, `blob-report/`, and any screenshot/trace file
+taken during ad-hoc visual verification (see
+`codexpiator-frontend/SKILL.md`'s Playwright verification step) — none
+of that is a project deliverable, and none of it should ever be
+`git add`ed even in the rare case it isn't yet gitignored.
 
 ## Remove dead code instead of commenting it out
 

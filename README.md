@@ -39,6 +39,10 @@ Working on it directly? Install straight from your local clone:
 /plugin install codexpiator
 ```
 
+Codexpiator checks for a newer release on every session start and
+tells you exactly how to update if one's available — no polling, no
+noise when you're already current.
+
 ## 📖 Table of contents
 
 - [Installing](#-installing)

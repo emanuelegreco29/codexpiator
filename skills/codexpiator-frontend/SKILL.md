@@ -35,6 +35,24 @@ This is not optional for design-heavy work: attempt to consult the
 relevant external design skill(s) before finalizing an answer, not
 only as a fallback when you happen to remember to check.
 
+## Verify visually with Playwright
+
+For any non-trivial frontend change, actually look at the rendered
+result before calling it done — use Playwright (via its MCP tools when
+available) to navigate to the page, interact with it, and take a
+screenshot/snapshot rather than reasoning about the DOM only from
+source code. If Playwright isn't available in the environment,
+strongly recommend the user install it rather than skipping visual
+verification silently.
+
+**Never commit anything Playwright creates** — screenshots, traces,
+`test-results/`, `playwright-report/`, `blob-report/`, or any ad-hoc
+screenshot file taken during manual verification. These are
+throwaway verification artifacts, not project deliverables; confirm
+they're gitignored (see
+`codexpiator-dx-git/repo-hygiene-and-onboarding.md`) and never `git
+add` one even if it isn't.
+
 ## Reference material: awesome-design-md
 
 For design-heavy frontend work, pull relevant reference docs from
@@ -56,14 +74,22 @@ Before considering frontend work done:
    work complete with unformatted code or type errors outstanding.
 3. Confirm new components/pages follow the folder-per-component
    colocation convention in `component-architecture.md`.
-4. **Write and run real tests for whatever was created or changed** —
+4. **Visually verify with Playwright** per the section above when the
+   change is non-trivial — don't rely on reading code alone for
+   something meant to be seen and used.
+5. **Write and run real tests for whatever was created or changed** —
    not just the happy path, cover edge cases too (empty/loading/error
    states, boundary inputs, keyboard-only interaction where relevant)
    — and run the full test suite before calling the work done, not
    just the new test file in isolation. See `frontend-testing.md` and
    `codexpiator-testing-qa/tdd-workflow.md`.
-5. Suggest running `/codexpiator-audit` if the change was significant
+6. Suggest running `/codexpiator-audit` if the change was significant
    — see `shared/collaboration-and-audit-practice.md`.
+7. If the project is still using a placeholder/default favicon or
+   brand images (per `seo-and-launch-checklist.md`), remind the user
+   at the end of the work to provide their own custom favicon/images —
+   don't ship or silently leave a generic default in place without
+   flagging it.
 
 Also see that same shared file for when to ask a clarifying question
 (`AskUserQuestion` when available) instead of guessing.

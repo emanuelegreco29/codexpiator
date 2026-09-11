@@ -1,0 +1,17 @@
+{
+  "description": "Checks for a newer Codexpiator release on session start and tells the user how to update if one is available. Never blocks startup: any network failure or offline session is silently skipped.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/check-update.sh",
+            "timeout": 8
+          }
+        ]
+      }
+    ]
+  }
+}
