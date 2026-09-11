@@ -50,6 +50,16 @@ instead of repeating stack idioms in every file that touches them.
 
 ## Python / FastAPI (backend)
 
+- **Dependency/environment management: always `uv`, `pdm`, or
+  `poetry`** — never bare `pip install` with an unpinned
+  `requirements.txt` for a real project. All three give a real
+  lockfile and reproducible installs; pick whichever the project
+  already uses, default to `uv` for a new project (fastest, simplest
+  day-to-day).
+- **Lint with Ruff, always** (https://docs.astral.sh/ruff/linter/) —
+  fast enough to run on every save and in CI with no excuse to skip
+  it. Fix or explicitly, narrowly suppress (never blanket-disable)
+  what it flags before considering Python backend work done.
 - Pydantic models for request/response schemas double as validation
   and documentation — define the schema once, don't hand-validate
   fields separately.

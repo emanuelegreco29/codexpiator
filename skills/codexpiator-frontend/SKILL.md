@@ -20,6 +20,7 @@ trying to hold all of it in one place.
 | `frontend-performance.md` | Bundle size, lazy loading, images, layout shift |
 | `frontend-testing.md` | What to unit/integration/E2E test on the frontend |
 | `accessibility.md` | Semantic HTML, ARIA, keyboard nav, contrast, focus management |
+| `seo-and-launch-checklist.md` | Pre-launch pass: metadata, SEO tags, legal pages, conversion essentials |
 | `external-skills-map.md` | Whether a specialized design skill should lead instead |
 
 ## Before any visually-led answer
@@ -29,3 +30,28 @@ polish pass, or auditing an existing UI, check `external-skills-map.md`
 first — a specialized external skill may be a better fit than this
 skill's own guidance, and that file (plus
 `shared/external-skills-registry.md`) has the procedure for checking.
+This is not optional for design-heavy work: attempt to consult the
+relevant external design skill(s) before finalizing an answer, not
+only as a fallback when you happen to remember to check.
+
+## Reference material: awesome-design-md
+
+For design-heavy frontend work, pull relevant reference docs from
+https://github.com/voltagent/awesome-design-md — a curated collection
+of design-principle documents. Fetch the specific docs relevant to the
+task at hand rather than guessing from memory when a authoritative
+written reference is one fetch away.
+
+## Mandatory pre-completion gate for any frontend change
+
+Before considering frontend work done:
+1. **Consult every relevant file in this skill** (`component-
+   architecture.md`, `state-management.md`, `styling-and-css.md`,
+   etc. — whichever apply to the change) plus any applicable external
+   design skill from `external-skills-map.md`, not just the first one
+   that seems relevant.
+2. **Run Prettier (or the project's configured formatter) and a type
+   check** and resolve everything they flag. Never report frontend
+   work complete with unformatted code or type errors outstanding.
+3. Confirm new components/pages follow the folder-per-component
+   colocation convention in `component-architecture.md`.

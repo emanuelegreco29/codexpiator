@@ -58,6 +58,31 @@ features.
 - A component's file name should match its exported name exactly —
   don't make someone guess which export `Card.tsx` provides.
 
+## Folder-per-component/page colocation
+
+Every component and every page gets its own dedicated directory
+holding everything specific to it — markup/logic (`.tsx`), styles
+(`.css`/module), and its own tests — rather than scattering a
+component's `.tsx` in one shared folder and its `.css` in another.
+This is the file-system expression of single responsibility: deleting
+or moving the feature means deleting or moving one folder, and nothing
+about it is implicit or split across parallel directory trees. Default
+layout for a component:
+
+```
+components/
+  UserCard/
+    UserCard.tsx
+    UserCard.css
+    UserCard.test.tsx
+```
+
+The same applies to pages/routes: a page's `.tsx` and its `.css` live
+together in that page's own directory, not in a global `styles/`
+folder disconnected from the component that uses them. Apply this
+consistently — the more modular and predictable the layout, the less
+someone has to search to find everything relevant to one piece of UI.
+
 ## Folder-per-feature vs folder-per-type
 
 Folder-per-type (`components/`, `hooks/`, `utils/` at the top level,

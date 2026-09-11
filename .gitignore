@@ -1,3 +1,11 @@
 .DS_Store
 node_modules/
 *.log
+
+# Claude Code / skill tool artifact directories - never the plugin's own
+# .claude-plugin/ manifest folder or the project's own docs/ folder, which
+# are real tracked repo content, not tool-generated cache.
+.claude/
+.superpowers/
+.playwright/
+.docs/
