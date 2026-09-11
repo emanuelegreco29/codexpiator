@@ -1,5 +1,5 @@
 ---
-description: Full frontend/backend/security/testing audit of the current project via the codexpiator-reviewer agent
+description: Full frontend/backend/security/testing audit via the reviewer agent
 allowed-tools: Read, Grep, Glob, Bash(git:*)
 ---
 

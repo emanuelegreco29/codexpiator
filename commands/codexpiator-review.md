@@ -1,5 +1,5 @@
 ---
-description: Targeted review of the current diff or a named PR/branch against Codexpiator's checklists
+description: Review the current diff or a PR against Codexpiator's checklists
 argument-hint: [pr-number-or-branch (optional)]
 allowed-tools: Read, Grep, Glob, Bash(git:*), Bash(gh:*)
 ---
