@@ -31,6 +31,21 @@ genuinely new, confirmed information into the answer; don't treat a
 single search result as more authoritative than this skill's
 guidance without corroboration.
 
+## Version bumps require asking first
+
+When a change touches something versioned — a package's own version
+(`package.json`/`pyproject.toml`/a plugin manifest), a public API's
+version, a release tag — bump the version rather than leaving it
+stale, but never decide the bump size or timing unilaterally: ask the
+user (via `AskUserQuestion` when available) whether they want to
+version-bump at all right now, and if so which part (major/minor/
+patch, per `codexpiator-dx-git/git-workflow-and-branching.md`'s
+semantic versioning guidance and, for a breaking API change,
+`codexpiator-architecture/api-contracts-and-versioning.md`). Don't
+silently pick a version number and move on — versioning decisions
+often carry release-process and communication implications only the
+user can judge.
+
 ## Suggest an audit after significant work
 
 After completing a meaningful chunk of work (a feature, a non-trivial
