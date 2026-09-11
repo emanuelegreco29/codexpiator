@@ -22,10 +22,12 @@ Any directory a Claude Code skill, plugin, or AI coding tool creates
 as its own working/cache state — `.claude/`, `.superpowers/`,
 `.playwright/`, `.docs/` (a tool-generated dot-directory, distinct from
 a project's own plain `docs/` folder holding real authored content),
-Codexpiator's own long-task progress-memory directory (see
-`shared/long-task-memory-and-superpowers.md` — gitignore it the moment
-it's created, not later), and any similar tool-artifact directory a
-skill introduces — must be
+Codexpiator's own `.codexpiator/` scratch directory (progress memory,
+downloaded design references, and any other Codexpiator working
+state — see `shared/long-task-memory-and-superpowers.md` for its
+internal structure; gitignore it the moment it's first created, not
+later), and any similar tool-artifact directory a skill introduces —
+must be
 added to `.gitignore` in every project this toolkit sets up or
 touches. Check for this explicitly whenever `/codexpiator-setup` runs
 or whenever a skill is observed creating a new such directory; add the

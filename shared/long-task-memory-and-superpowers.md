@@ -2,8 +2,33 @@
 
 Two related practices for anything long or complex enough that losing
 context mid-way would actually hurt: write resumable progress memory
-to disk, and lean on the `superpowers:*` skill family instead of
+(and downloaded reference material) to disk in one well-organized
+place, and lean on the `superpowers:*` skill family instead of
 improvising process from scratch.
+
+## The `.codexpiator/` scratch directory
+
+Codexpiator uses exactly **one** root-level scratch directory per
+project, `.codexpiator/`, for everything it needs to persist outside
+the conversation but that isn't a project deliverable. **Add it to
+`.gitignore` the moment it's first created**, per
+`codexpiator-dx-git/repo-hygiene-and-onboarding.md`'s
+gitignore-every-tool-artifact-directory rule — never let anything
+inside it get committed. Organize it by clear subfolders rather than
+dropping files loose at its root:
+
+```
+.codexpiator/
+  progress/      # resumable long-task progress memory (see below)
+  design-refs/   # downloaded design reference docs (see
+                 # codexpiator-frontend/SKILL.md's awesome-design-md
+                 # section) - subagent-selected for the project's
+                 # actual scope, not a bulk indiscriminate download
+```
+
+Add further subfolders under `.codexpiator/` the same way if a future
+need for gitignored scratch state comes up — keep it to this one root
+rather than inventing new top-level dot-directories per need.
 
 ## Progress memory for long/complex procedures
 
@@ -13,14 +38,9 @@ multi-step migration, a large refactor, a full audit across many
 files, anything spanning many commits — write a markdown progress
 file as you go, not just plan silently in the conversation.
 
-- **Location:** a custom directory at the project root, e.g.
-  `.codexpiator/` — pick one consistent name per project. **Add it to
-  `.gitignore` immediately**, in the same step you create it, per
-  `codexpiator-dx-git/repo-hygiene-and-onboarding.md`'s
-  gitignore-every-tool-artifact-directory rule. This is working
-  memory, never a project deliverable.
+- **Location:** `.codexpiator/progress/`.
 - **One file per task**, named descriptively (e.g.
-  `.codexpiator/2026-09-11-auth-migration.md`), containing: the goal,
+  `.codexpiator/progress/2026-09-11-auth-migration.md`), containing: the goal,
   what's been done so far, what's left, and any decision/context
   someone (or a future you, in a new session) would need to pick the
   task back up without re-deriving it.
