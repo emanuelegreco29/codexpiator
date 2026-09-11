@@ -46,6 +46,27 @@ silently pick a version number and move on — versioning decisions
 often carry release-process and communication implications only the
 user can judge.
 
+## Persisting user preferences
+
+When the user makes a choice about how Codexpiator should behave going
+forward in a given project — commit autonomy level (see
+`codexpiator-dx-git/commit-and-pr-conventions.md`), a stack default, a
+convention choice — record it durably instead of re-asking every time.
+
+- **Default scope: the current project.** Save it to that project's
+  own `CLAUDE.md` (create a `## Codexpiator preferences` section if
+  none exists yet, append a short line for the new preference). This
+  keeps the setting local to the project it was actually decided for.
+- **Global scope only if the user explicitly says so.** Write to a
+  global location (the user's global `CLAUDE.md` / global settings)
+  only when they say the preference should apply everywhere, not by
+  default and not by inference from "this seems like a general
+  preference."
+- Once a preference is recorded, respect it silently on later
+  occasions rather than re-asking — but it's fine to double-check if
+  the situation has clearly changed enough that the old answer might
+  no longer apply.
+
 ## Suggest an audit after significant work
 
 After completing a meaningful chunk of work (a feature, a non-trivial

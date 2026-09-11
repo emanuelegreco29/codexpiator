@@ -1,5 +1,23 @@
 # Commit & PR Conventions
 
+## Commit autonomy: ask, then remember
+
+Before committing on behalf of the user in a project for the first
+time — or whenever no stored preference exists yet for this project —
+ask (via `AskUserQuestion` when available) how they want commits
+handled:
+1. Commit autonomously once work is verified, without asking each
+   time.
+2. Ask for confirmation before every individual commit.
+3. Never commit directly — only suggest the commit command/message
+   for the user to run themselves.
+
+Persist the answer per
+`shared/collaboration-and-audit-practice.md`'s preference-persistence
+rule (the project's own `CLAUDE.md` by default, global only if the
+user explicitly asks for that). Once recorded, follow it on every
+later commit in that project without re-asking.
+
 ## No AI/assistant attribution, ever, by default
 
 Never add an AI/assistant co-author line, never mention Claude,
