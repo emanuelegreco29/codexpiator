@@ -43,6 +43,13 @@ Codexpiator checks for a newer release on every session start and
 tells you exactly how to update if one's available — no polling, no
 noise when you're already current.
 
+It also **hard-blocks any commit or PR that includes AI/assistant
+attribution** (a `Co-Authored-By: Claude` line, a "Generated with
+Claude Code" footer, etc.) — deterministically, via a `PreToolUse`
+hook, not just a skill saying not to. Opt out per project with an
+empty `.codexpiator/allow-ai-attribution` file if you genuinely want
+attribution there.
+
 ## 📖 Table of contents
 
 - [Installing](#-installing)

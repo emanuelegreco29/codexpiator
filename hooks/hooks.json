@@ -1,5 +1,5 @@
 {
-  "description": "Checks for a newer Codexpiator release on session start and tells the user how to update if one is available. Never blocks startup: any network failure or offline session is silently skipped.",
+  "description": "Checks for a newer Codexpiator release on session start (never blocks startup), and deterministically blocks any git commit/PR command that includes AI/assistant attribution (Co-Authored-By Claude/Anthropic, a Claude Code footer, etc.) regardless of what a skill's prose says - prose alone can't reliably override a harness's own default attribution injection.",
   "hooks": {
     "SessionStart": [
       {
@@ -9,6 +9,18 @@
             "type": "command",
             "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/check-update.sh",
             "timeout": 8
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/block-ai-attribution.sh",
+            "timeout": 5
           }
         ]
       }

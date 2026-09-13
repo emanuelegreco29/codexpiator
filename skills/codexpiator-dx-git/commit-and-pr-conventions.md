@@ -26,9 +26,22 @@ description created on a user's project — regardless of which tool
 actually produced the change — unless that specific project's owner
 has explicitly asked for it. Treat this as the default for every
 project this toolkit is used on, not a preference to rediscover each
-time. If a host environment's own configuration tries to inject
-attribution by default, an explicit project-level instruction saying
-not to takes precedence for that project.
+time.
+
+**Be honest about what actually enforces this.** A host environment's
+own default attribution instructions are injected fresh every
+session and can outweigh a skill's prose guidance — writing "never do
+this" here is necessary but not sufficient on its own; it can still
+lose to a stronger, more recent instruction in context. The real,
+deterministic enforcement is the plugin's `PreToolUse` hook
+(`scripts/block-ai-attribution.sh`), which blocks any `git commit`/
+`git tag`/`gh pr create`/`gh release create` command whose message
+text contains Claude/Anthropic attribution, regardless of what
+instructions are currently in context, and tells Claude to rewrite
+the message without it. If a project genuinely wants attribution, its
+owner can disable the check for that project only by creating an
+empty `.codexpiator/allow-ai-attribution` file — don't create that
+file, or otherwise route around the hook, on your own judgment.
 
 ## Conventional-commit-style prefixes
 

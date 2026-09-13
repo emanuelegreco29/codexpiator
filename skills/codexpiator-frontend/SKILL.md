@@ -60,10 +60,42 @@ https://github.com/voltagent/awesome-design-md — a curated collection
 of design-principle documents — rather than guessing from memory when
 an authoritative written reference is one fetch away.
 
+**Gather the user's actual preferences before selecting anything.**
+Which docs are worth fetching depends entirely on taste and context
+that isn't in the repo or a one-line prompt — don't infer it silently.
+Before dispatching the selection subagent, call `AskUserQuestion` to
+cover (skip only what's already been stated explicitly or is genuinely
+fixed by an existing design system in the repo):
+
+- **Visual style/aesthetic** — e.g. minimalist, editorial, brutalist,
+  glassmorphism, playful, corporate/professional, dark-tech — offer a
+  real spread of distinct directions, not just light/dark.
+- **Language/locale** — the UI's primary language(s), and whether
+  i18n/RTL support is needed.
+- **Formatting & typography conventions** — type scale approach,
+  heading hierarchy style, content density (spacious vs. compact).
+- **Animations & motion** — none/minimal, subtle micro-interactions,
+  or expressive/bold motion (bridges to `external-skills-map.md`'s
+  `design-motion-principles` entry for the deeper implementation).
+- **Colors** — a specific palette/brand colors if they have one, or a
+  direction (warm/cool/neutral, monochrome vs. saturated) if not.
+- **Layout patterns** — e.g. classic marketing sections, dashboard/
+  data-dense, asymmetric/editorial grid, card-heavy vs. content-first.
+- **Fonts** — a specific typeface if they have one, or a style
+  direction (geometric sans, humanist sans, serif-forward) if not.
+
+For each, offer a genuinely wide range of concrete options rather than
+two extremes, and mark one or two as recommended defaults so the user
+can pick quickly without having to have a fully-formed opinion on
+every axis. Only after this is settled should the docs to fetch be
+decided — the preferences gathered here are what the selection
+subagent should match against.
+
 Don't bulk-download the whole collection. Use the Task/Agent tool to
 launch a subagent that browses the repo's index and picks the docs
-that actually match the current project's scope (its stack, its kind
-of UI, the specific concern at hand); save only those selected docs to
+that actually match the current project's scope *and* the preferences
+just gathered (stack, kind of UI, and the stated style/motion/color/
+layout/font direction); save only those selected docs to
 `.codexpiator/design-refs/` (see
 `shared/long-task-memory-and-superpowers.md` for the shared
 `.codexpiator/` directory convention — gitignore it immediately if

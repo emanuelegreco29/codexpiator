@@ -52,6 +52,18 @@ multiply questions past what's actually blocking — one targeted
 question beats several vague ones. The goal is resolving real
 ambiguity, not performing thoroughness.
 
+This cuts both ways: **every** `codexpiator-*` skill should reach for
+`AskUserQuestion` often, not rarely, whenever something genuinely
+isn't resolvable from the repo's code, the user's prompt, or prior
+context — silently guessing on a point that actually matters (a
+subjective/creative choice, a trade-off with real consequences, a
+missing requirement) is a bigger cost than one extra question.
+Frontend style/taste decisions are the clearest case of this (see
+`codexpiator-frontend/SKILL.md`'s design-preference gathering) but the
+same instinct applies everywhere: backend trade-offs with no stated
+constraint, an ambiguous security posture, an unclear deployment
+target — ask, don't assume.
+
 ## Stay current via WebSearch, with permission
 
 Any `codexpiator-*` skill's guidance can go stale — design trends,
