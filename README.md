@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/logo.png" alt="Codexpiator" width="220" />
+
 # 🧙‍♂️ Codexpiator
 
 **The extremely complete Claude Code toolkit for vibe coders & real-world engineers.**
@@ -7,7 +9,7 @@
 Frontend · Backend · Security · Testing · Architecture · DevOps · Git/DX · AI Integration — one plugin, nine skills, zero fluff.
 
 [![License: MIT](https://img.shields.io/github/license/emanuelegreco29/codexpiator?color=blue)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)](.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-1.1.0-brightgreen)](.claude-plugin/plugin.json)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-6c47ff)](https://github.com/emanuelegreco29/codexpiator)
 [![Skills](https://img.shields.io/badge/skills-9-orange)](#-topic-skills)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4)](https://github.com/emanuelegreco29/codexpiator/pulls)
