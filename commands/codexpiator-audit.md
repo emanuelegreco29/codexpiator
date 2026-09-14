@@ -21,7 +21,11 @@ Before launching the agent:
    — not only checklist violations.
 
 Launch the `codexpiator-reviewer` agent (via the Task/Agent tool) with
-that scope and instruction set. When it returns, present its findings
-to the user as a single prioritized list (most severe first) — do not
-re-narrate every file it found clean, and do not apply any fixes
-yourself unless the user asks you to after seeing the findings.
+that scope and instruction set. It returns a compact JSON object
+(`{"v":1,"n":...,"sev_max":...,"f":[...]}`), not prose — that's the
+agent-to-agent channel, so don't expect or ask for human-readable text
+there. Translate it yourself into what the user sees: a prioritized
+list (most severe first), one line per finding —
+`path:line — severity — problem — fix` — do not re-narrate every file
+it found clean, and do not apply any fixes yourself unless the user
+asks you to after seeing the findings.

@@ -9,7 +9,7 @@
 Frontend · Backend · Security · Testing · Architecture · DevOps · Git/DX · AI Integration — one plugin, nine skills, zero fluff.
 
 [![License: MIT](https://img.shields.io/github/license/emanuelegreco29/codexpiator?color=blue)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.1.0-brightgreen)](.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-1.1.1-brightgreen)](.claude-plugin/plugin.json)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-6c47ff)](https://github.com/emanuelegreco29/codexpiator)
 [![Skills](https://img.shields.io/badge/skills-9-orange)](#-topic-skills)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4)](https://github.com/emanuelegreco29/codexpiator/pulls)
@@ -97,6 +97,26 @@ attribution there.
 - **`codexpiator-reviewer`** — read-only subagent behind the two audit
   commands above. No write access, ever — it reports findings, it
   doesn't touch your code.
+
+### Compact agent-to-agent findings format
+
+`codexpiator-reviewer` doesn't talk to you directly — its output goes
+to `/codexpiator-audit`, which then writes the human-readable summary
+you see. Since that hop is agent-to-agent, not agent-to-user, the
+reviewer returns findings as compact JSON (`{"v":1,"n":...,"sev_max":
+...,"f":[{"sev":"H","cat":"SQLI","loc":"api.py:42","desc":"...",
+"fix":"..."}]}`) instead of a formatted prose list. The dispatching
+command translates that JSON into the readable list before showing it
+to you — you never see the raw JSON.
+
+Measured on a 2-finding sample report: the prose form (severity
+headers, em-dashes, full words like "critical"/"medium") ran 347
+bytes; the equivalent JSON ran 273 bytes — a 21% cut, and larger
+reports save proportionally more since JSON's fixed key overhead is
+paid once while prose repeats headers and severity words per group.
+Every findings-list channel that's agent-to-agent only (never rendered
+straight to you) follows this pattern; anything shown to you directly
+stays plain text.
 
 ## 🔌 External skills it plugs into
 

@@ -50,19 +50,31 @@ anything, and never to narrate files you found clean.
 
 ## Output format
 
-A single prioritized list, most severe first:
+Your output is read by the dispatching command/agent, not directly by
+the user — so return a compact machine format, not prose. It will
+translate your findings into a short human summary itself.
 
-```
-path/to/file.ext:123 — severity — problem — fix
+Return one JSON object:
+
+```json
+{"v":1,"n":3,"sev_max":"H","f":[
+  {"sev":"H","cat":"SQLI","loc":"api.py:42","desc":"query built via string concat","fix":"parametrize the query","conf":0.9},
+  {"sev":"M","cat":"dup","loc":"utils.py:10","desc":"duplicates validate() in helpers.py:22","fix":"consolidate"}
+]}
 ```
 
+- `sev`: `C`/`H`/`M`/`L` (critical/high/medium/low).
+- `cat`: short tag (`SQLI`, `XSS`, `authz`, `dup`, `dead-code`, `n+1`,
+  `test-gap`, etc.) — invent terse tags as needed, don't force-fit.
+- `loc`: `path:line`.
+- `conf`: only include when you're not fully certain (0–1) — a
+  plausible-but-unverified finding is still worth reporting, just
+  flagged this way. Omit `conf` when certain.
+- `f` sorted most severe first. `n` is `f`'s length. `sev_max` is the
+  highest severity present, or `null` if `f` is empty.
 - No entry for files/areas you checked and found clean.
-- No praise, no summary of what's fine, no restating the task.
-- Group by severity if the list is long (critical / high / medium /
-  low), but keep it a flat scannable list, not prose paragraphs.
-- If you found nothing across an entire checked category (e.g. no
-  security issues at all), a single line saying so is enough — don't
-  pad the report to seem thorough.
+- No praise, no summary of what's fine, no restating the task, no
+  prose outside the JSON object.
 
 ## What you must not do
 
