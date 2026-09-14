@@ -6,7 +6,7 @@
 
 **The extremely complete Claude Code toolkit for vibe coders & real-world engineers.**
 
-Frontend · Backend · Security · Testing · Architecture · DevOps · Git/DX · AI Integration — one plugin, nine skills, zero fluff.
+Frontend · Backend · Security · Testing · Architecture · DevOps · Git/DX · AI Integration. One plugin, nine skills, zero fluff.
 
 [![License: MIT](https://img.shields.io/github/license/emanuelegreco29/codexpiator?color=blue)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.1.1-brightgreen)](.claude-plugin/plugin.json)
@@ -19,7 +19,7 @@ Frontend · Backend · Security · Testing · Architecture · DevOps · Git/DX �
 ---
 
 Codexpiator is a router skill plus eight topic skills covering the
-full span of shipping real software — organized as dozens of small,
+full span of shipping real software, organized as dozens of small,
 single-purpose files instead of one giant wall of advice. It knows its
 own limits too: when a more specialized external skill (visual design,
 motion, a deep security audit, ...) would serve you better, it checks
@@ -42,12 +42,12 @@ Working on it directly? Install straight from your local clone:
 ```
 
 Codexpiator checks for a newer release on every session start and
-tells you exactly how to update if one's available — no polling, no
+tells you exactly how to update if one's available: no polling, no
 noise when you're already current.
 
 It also **hard-blocks any commit or PR that includes AI/assistant
 attribution** (a `Co-Authored-By: Claude` line, a "Generated with
-Claude Code" footer, etc.) — deterministically, via a `PreToolUse`
+Claude Code" footer, etc.), deterministically, via a `PreToolUse`
 hook, not just a skill saying not to. Opt out per project with an
 empty `.codexpiator/allow-ai-attribution` file if you genuinely want
 attribution there.
@@ -90,38 +90,38 @@ attribution there.
 |---|---|
 | `/codexpiator-audit` | Full frontend + backend + security + testing audit, run through the `codexpiator-reviewer` agent so it never floods your main conversation |
 | `/codexpiator-setup` | Bootstraps baseline structure and conventions for a project |
-| `/codexpiator-review` | Targeted review of a diff/PR against Codexpiator's own checklists — complements, never replaces, `/code-review` and `security-review` |
+| `/codexpiator-review` | Targeted review of a diff/PR against Codexpiator's own checklists; complements, never replaces, `/code-review` and `security-review` |
 
 ## 🤖 Agent
 
-- **`codexpiator-reviewer`** — read-only subagent behind the two audit
-  commands above. No write access, ever — it reports findings, it
+- **`codexpiator-reviewer`**: read-only subagent behind the two audit
+  commands above. No write access, ever; it reports findings, it
   doesn't touch your code.
 
 ### Compact agent-to-agent findings format
 
-`codexpiator-reviewer` doesn't talk to you directly — its output goes
+`codexpiator-reviewer` doesn't talk to you directly. Its output goes
 to `/codexpiator-audit`, which then writes the human-readable summary
 you see. Since that hop is agent-to-agent, not agent-to-user, the
 reviewer returns findings as compact JSON (`{"v":1,"n":...,"sev_max":
 ...,"f":[{"sev":"H","cat":"SQLI","loc":"api.py:42","desc":"...",
 "fix":"..."}]}`) instead of a formatted prose list. The dispatching
 command translates that JSON into the readable list before showing it
-to you — you never see the raw JSON.
+to you; you never see the raw JSON.
 
 Measured on a 2-finding sample report: the prose form (severity
-headers, em-dashes, full words like "critical"/"medium") ran 347
-bytes; the equivalent JSON ran 273 bytes — a 21% cut, and larger
-reports save proportionally more since JSON's fixed key overhead is
-paid once while prose repeats headers and severity words per group.
-Every findings-list channel that's agent-to-agent only (never rendered
+headers, spelled-out words like "critical"/"medium") ran 347 bytes,
+the equivalent JSON ran 273 bytes: a 21% cut, and larger reports save
+proportionally more since JSON's fixed key overhead is paid once
+while prose repeats headers and severity words per group. Every
+findings-list channel that's agent-to-agent only (never rendered
 straight to you) follows this pattern; anything shown to you directly
 stays plain text.
 
 ## 🔌 External skills it plugs into
 
 Codexpiator checks for these when relevant and tells you exactly how
-to get them if they're missing — see
+to get them if they're missing. See
 [`shared/external-skills-registry.md`](shared/external-skills-registry.md)
 for the full behavior and honest notes on which install paths are
 actually confirmed:
@@ -137,12 +137,12 @@ actually confirmed:
 | `redesign-existing-projects` | Upgrading an existing UI without breaking it |
 | `ui-ux-pro-max` | General high-end UI/UX assistance |
 
-Availability varies by environment — Codexpiator always falls back to
+Availability varies by environment. Codexpiator always falls back to
 its own guidance when one isn't installed, never leaving you blocked.
 
 ## 🧱 Stack policy
 
-Universal principles first, always — with explicit "if you use X"
+Universal principles first, always, with explicit "if you use X"
 call-outs for the most common modern stacks (React/Next.js, Vue/Nuxt,
 Node/Express, Python/FastAPI, Go). See
 [`shared/stack-recommendations.md`](shared/stack-recommendations.md).
