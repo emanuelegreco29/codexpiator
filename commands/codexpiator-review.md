@@ -21,8 +21,5 @@ those are available.
    `codexpiator-frontend`/`codexpiator-backend` and spot-check against
    the specific concern touched (don't pull in everything either skill
    covers — only what's relevant to what changed).
-5. Confirm no unwanted AI/assistant attribution was left in any commit
-   message or PR description in scope (per
-   `codexpiator-dx-git/commit-and-pr-conventions.md`).
-6. Output one line per finding: `file:line — severity — problem — fix`.
+5. Output one line per finding: `file:line — severity — problem — fix`.
    No praise, no scope creep, no restating what's already correct.

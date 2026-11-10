@@ -9,7 +9,7 @@
 Frontend · Backend · Security · Testing · Architecture · DevOps · Git/DX · AI Integration. One plugin, nine skills, zero fluff.
 
 [![License: MIT](https://img.shields.io/github/license/emanuelegreco29/codexpiator?color=blue)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.1.1-brightgreen)](.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-1.2.0-brightgreen)](.claude-plugin/plugin.json)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-6c47ff)](https://github.com/emanuelegreco29/codexpiator)
 [![Skills](https://img.shields.io/badge/skills-9-orange)](#-topic-skills)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4)](https://github.com/emanuelegreco29/codexpiator/pulls)
@@ -45,12 +45,14 @@ Codexpiator checks for a newer release on every session start and
 tells you exactly how to update if one's available: no polling, no
 noise when you're already current.
 
-It also **hard-blocks any commit or PR that includes AI/assistant
-attribution** (a `Co-Authored-By: Claude` line, a "Generated with
-Claude Code" footer, etc.), deterministically, via a `PreToolUse`
-hook, not just a skill saying not to. Opt out per project with an
-empty `.codexpiator/allow-ai-attribution` file if you genuinely want
-attribution there.
+`/codexpiator-setup` asks **once per project** whether commits and PRs
+should keep Claude's attribution (`Co-Authored-By` line, "Generated
+with Claude Code" footer). Say no and it detects your Claude Code version and disables
+`attribution` in `.claude/settings.json` the right way for it
+(`false` on v2.1.281+, the empty-fields object on older versions); a
+`PreToolUse` hook also blocks any commit/PR that still includes it.
+Say yes and it creates an empty `.codexpiator/allow-ai-attribution`
+file so the hook stays out of the way.
 
 ## 📖 Table of contents
 

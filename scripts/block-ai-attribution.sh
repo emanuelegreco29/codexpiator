@@ -47,7 +47,7 @@ if printf '%s' "$input" | grep -Eiq \
   "hookSpecificOutput": {
     "permissionDecision": "deny"
   },
-  "systemMessage": "Blocked by Codexpiator: this command's commit/PR message includes AI/assistant attribution (a Co-Authored-By Claude/Anthropic line, a Claude Code footer, or similar). The standing rule is to never add this unless the project owner explicitly asked for it in this project. Rewrite the message without any Claude/Anthropic reference and retry - do not just delete the hook or bypass it. If this project genuinely wants attribution, tell the user to create an empty .codexpiator/allow-ai-attribution file."
+  "systemMessage": "Blocked by Codexpiator: this command's commit/PR message includes AI/assistant attribution (a Co-Authored-By Claude/Anthropic line, a Claude Code footer, or similar). The standing rule is to never add this unless the project owner explicitly asked for it in this project. Rewrite the message without any Claude/Anthropic reference and retry - do not just delete the hook or bypass it. If this project genuinely wants attribution, tell the user to run /codexpiator-setup and choose to keep it, or create an empty .codexpiator/allow-ai-attribution file."
 }
 EOF
   exit 2

@@ -1,5 +1,5 @@
 {
-  "description": "Checks for a newer Codexpiator release on session start (never blocks startup), and deterministically blocks any git commit/PR command that includes AI/assistant attribution (Co-Authored-By Claude/Anthropic, a Claude Code footer, etc.) regardless of what a skill's prose says - prose alone can't reliably override a harness's own default attribution injection.",
+  "description": "Checks for a newer Codexpiator release on session start (never blocks startup), and deterministically blocks any git commit/PR command that includes AI/assistant attribution (Co-Authored-By Claude/Anthropic, a Claude Code footer, etc.) unless the project opted in during /codexpiator-setup (empty .codexpiator/allow-ai-attribution file).",
   "hooks": {
     "SessionStart": [
       {

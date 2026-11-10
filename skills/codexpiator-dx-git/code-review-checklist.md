@@ -32,8 +32,3 @@ mechanical issues — this checklist is what a human reviewer should
 still confirm on top of that, particularly correctness against actual
 intent and readability, which automated review can't fully judge.
 
-## No AI attribution in what gets merged
-
-While reviewing, also confirm no commit or PR description was left
-with unwanted AI/assistant attribution (see
-`commit-and-pr-conventions.md`) before approving.

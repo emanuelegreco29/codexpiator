@@ -28,6 +28,23 @@ Codexpiator's guidance.
 5. For a frontend, invoke `codexpiator-frontend` and confirm Prettier,
    a type checker, and the folder-per-component convention are
    reflected in the scaffolded structure.
-6. Report exactly what was created/left alone, and suggest
+6. Attribution question, asked **once per project**. Skip it if
+   `.claude/settings.json` already has an `attribution` key, or
+   `.codexpiator/allow-ai-attribution` exists. Otherwise call `AskUserQuestion`: should commits and PRs
+   keep Claude's attribution (the `Co-Authored-By` trailer and
+   "Generated with Claude Code" footer)?
+   - **Keep it**: create an empty `.codexpiator/allow-ai-attribution`
+     file (this disables the plugin's attribution-blocking hook for
+     this project) and change nothing else.
+   - **Remove it**: detect the Claude Code version by running
+     `claude --version`, then merge into `.claude/settings.json`
+     (create it if missing, preserve every existing key):
+     - v2.1.281 or newer: `"attribution": false`
+     - older, or version undetectable:
+       `"attribution": {"commit": "", "pr": "", "sessionUrl": false}`
+     Compare versions numerically per segment (2.1.281 > 2.1.99),
+     not as strings.
+   Never re-ask on later runs.
+7. Report exactly what was created/left alone, and suggest
    `/codexpiator-audit` once real code exists to check against these
    conventions.

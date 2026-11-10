@@ -38,8 +38,7 @@ anything, and never to narrate files you found clean.
      — injection, authn/authz, secrets, dependencies, infra, business
      logic/webhooks).
    - Any tests (or absence of them) → invoke `codexpiator-testing-qa`.
-   - Git/PR hygiene → invoke `codexpiator-dx-git` (including the
-     standing no-AI-attribution rule).
+   - Git/PR hygiene → invoke `codexpiator-dx-git`.
 3. Beyond checklist violations, also look for: unused dependencies,
    excessive boilerplate, duplicated logic that should be
    consolidated, and plain logical inconsistencies (code that
