@@ -175,6 +175,21 @@ call-outs for the most common modern stacks (React/Next.js, Vue/Nuxt,
 Node/Express, Python/FastAPI, Go). See
 [`shared/stack-recommendations.md`](shared/stack-recommendations.md).
 
+## 🤝 Contributing
+
+1. Fork, then branch from `main` (`feat/...`, `fix/...`, `docs/...`).
+2. Keep the structure: one topic per file under `skills/<skill>/`,
+   shared behavior in `shared/`, one file per command in `commands/`
+   and per subagent in `agents/`. No hooks and no scripts.
+3. Check your change: every file's frontmatter must parse as YAML, every
+   path or agent name mentioned must exist, and
+   `claude plugin validate .` (or the `plugin-dev:plugin-validator`
+   agent) must come back clean.
+4. Use conventional commit prefixes (`feat`, `fix`, `docs`, `refactor`,
+   `chore`), one logical change per commit, and keep version bumps in
+   their own commit.
+5. Open a PR describing what changed, why, and how you checked it.
+
 ---
 
 <div align="center">

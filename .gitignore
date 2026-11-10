@@ -9,3 +9,9 @@ node_modules/
 .superpowers/
 .playwright/
 .docs/
+.codexpiator/
+
+# Playwright output
+test-results/
+playwright-report/
+blob-report/
