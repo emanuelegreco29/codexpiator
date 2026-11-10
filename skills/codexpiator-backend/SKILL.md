@@ -1,6 +1,6 @@
 ---
-name: codexpiator-backend
-description: Backend engineering guidance - API design and contracts, data modeling and databases, authentication and authorization implementation (sessions vs JWT, password hashing - see codexpiator-security for the threat-model/hardening side), error handling and logging, caching, background jobs and queues, resilience and rate limiting, backend performance, and backend testing. Use for any server-side/API/data-layer question.
+name: backend
+description: Backend engineering guidance - API design and contracts, data modeling and databases, authentication and authorization implementation (sessions vs JWT, password hashing - see codexpiator:security for the threat-model/hardening side), error handling and logging, caching, background jobs and queues, resilience and rate limiting, backend performance, and backend testing. Use for any server-side/API/data-layer question.
 ---
 
 # Codexpiator Backend
@@ -21,7 +21,7 @@ Read the specific file below for the concern at hand.
 | `backend-testing.md` | Unit vs integration tests, test data for the backend |
 
 For deeper security hardening beyond the how-to in
-`auth-and-authorization.md`, invoke the `codexpiator-security` skill —
+`auth-and-authorization.md`, invoke the `codexpiator:security` skill —
 that skill covers the threat model, this one covers the implementation
 approach.
 
@@ -41,7 +41,7 @@ Before considering backend work done:
    idempotency-key handling (`api-design.md`); propose it if the user
    didn't ask.
 3. For anything security-sensitive (auth, input handling, data
-   access), also invoke the `codexpiator-security` skill and run its
+   access), also invoke the `codexpiator:security` skill and run its
    relevant checks — security behavior needs to be tested as
    thoroughly as functional behavior, not assumed correct because it
    looks right.

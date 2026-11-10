@@ -19,7 +19,7 @@ not to simulate the outcome narratively. Concretely:
   invocation — the same way a `superpowers:*` skill gets invoked —
   rather than opening its `SKILL.md` with a file-read tool. A plain
   sibling resource file *within the currently-active skill*
-  (`component-architecture.md` referenced from `codexpiator-frontend`,
+  (`component-architecture.md` referenced from `codexpiator:frontend`,
   for example) is meant to be read directly — that distinction is
   what separates a resource file from a separate skill.
 - To run a **`codexpiator-*-auditor` agent** (or any subagent), use

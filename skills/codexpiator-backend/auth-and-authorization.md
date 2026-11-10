@@ -43,7 +43,7 @@ the codebase — explicit modeling makes it possible to answer "who can
 do X" by looking in one place, and to add a new intermediate
 permission level later without restructuring every check.
 
-## This file vs `codexpiator-security`
+## This file vs `codexpiator:security`
 
 This file is the practical how-to for implementing auth. For the
 threat-model side — session fixation, horizontal privilege escalation,

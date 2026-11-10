@@ -1,5 +1,5 @@
 ---
-name: codexpiator-devops
+name: devops
 description: DevOps guidance - CI/CD pipelines, environments and config, containerization, observability and monitoring, incident response and rollback, and deployment platforms. Use when setting up deployment, CI/CD, monitoring, or handling an incident.
 ---
 

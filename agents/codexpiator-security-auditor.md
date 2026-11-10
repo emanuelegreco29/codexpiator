@@ -24,7 +24,7 @@ Never fix anything, never narrate files you found clean.
    `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`). If your
    prompt says `claude-security` was missing or failed, mention that in
    one line in the output; you cannot install it (read-only).
-3. **Invoke** the `codexpiator-security` skill and verify each
+3. **Invoke** the `codexpiator:security` skill and verify each
    applicable item: `secure-coding-checklist`, `authn-authz-patterns`
    (IDOR/BOLA, session handling, password reset, MFA),
    `input-validation-and-injection` (SQL/NoSQL, XSS, CSRF, uploads,
@@ -36,7 +36,7 @@ Never fix anything, never narrate files you found clean.
    limits), `business-logic-and-webhooks` (signature checks, replay,
    server-side payment checks, races).
 4. If the scope has LLM or agent features, also invoke
-   `codexpiator-ai-integration` and check
+   `codexpiator:ai-integration` and check
    `agentic-and-tool-use-safety` (prompt injection, excessive
    permissions, unvalidated model output).
 5. Prefer fewer well-evidenced findings over many speculative ones, but

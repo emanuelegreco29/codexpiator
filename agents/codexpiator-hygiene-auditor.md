@@ -12,7 +12,7 @@ problems compactly. Never fix anything, never narrate what is fine.
 
 ## What to do
 
-1. **Invoke** the `codexpiator-dx-git` skill (real skill invocation)
+1. **Invoke** the `codexpiator:dx-git` skill (real skill invocation)
    and read `repo-hygiene-and-onboarding`, `documentation-practices`,
    `commit-and-pr-conventions`, `git-workflow-and-branching` and
    `code-review-checklist` as relevant.

@@ -33,7 +33,7 @@ the cool-down, typically via a small number of trial requests.
 
 Apply rate limits to your own public-facing endpoints to protect
 against abusive or accidentally-runaway traffic (see
-`codexpiator-security`'s treatment of rate limiting for the
+`codexpiator:security`'s treatment of rate limiting for the
 brute-force/abuse angle specifically — this file is about general
 service reliability, that one is about attack surface). Separately,
 respect the rate limits of any third-party API you call — track your

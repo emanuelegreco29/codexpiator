@@ -1,5 +1,5 @@
 ---
-name: codexpiator-testing-qa
+name: testing-qa
 description: General testing strategy and quality gates - testing pyramid, TDD workflow, mocking and test data, and CI quality gates. Use whenever following TDD, deciding what test level to use, or deciding what should block a merge (for frontend-specific test scope, see codexpiator-frontend/frontend-testing.md).
 ---
 

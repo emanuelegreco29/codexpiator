@@ -3,7 +3,7 @@
 Anthropic's `claude-security` plugin (skill `claude-security:claude-security`,
 marketplace `claude-plugins-official`) is the lead tool for security work in
 Codexpiator. Install it when missing and use it almost every time security is
-in play. Codexpiator's own `codexpiator-security` checklists are the baseline
+in play. Codexpiator's own `codexpiator:security` checklists are the baseline
 that runs next to it, never a replacement.
 
 ## When it applies
@@ -30,10 +30,10 @@ line instead of silently skipping.
    it. Do not claim the skill ran when it did not.
 4. **If install fails** (no CLI, no network, blocked): say so plainly with the
    shortest decisive error line, then continue with `security-review` if
-   present, else the `codexpiator-security` checklists. Never retry blindly.
+   present, else the `codexpiator:security` checklists. Never retry blindly.
 5. **If present, invoke it** with the Skill tool, scoped to the same
    files/diff as the task, before finalizing. Then also apply the
-   `codexpiator-security` checklists for what it did not cover.
+   `codexpiator:security` checklists for what it did not cover.
 
 ## Why main thread only
 

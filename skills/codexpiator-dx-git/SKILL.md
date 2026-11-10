@@ -1,5 +1,5 @@
 ---
-name: codexpiator-dx-git
+name: dx-git
 description: Git workflow and developer experience guidance - branching strategy, commit and PR conventions, code review checklist, documentation practices, and repo hygiene/onboarding. Use when working with git, writing commits/PRs, reviewing code, or setting up a repo.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: codexpiator-architecture
+name: architecture
 description: Software architecture guidance - project structure conventions, design patterns catalog, API contracts and versioning, scalability trade-offs, and monolith vs microservices. Use when structuring a new project, deciding how to split code, or making a structural/scaling decision.
 ---
 

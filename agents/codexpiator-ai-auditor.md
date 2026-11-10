@@ -17,7 +17,7 @@ is fine.
    exposes tools to one: SDK calls, prompt templates and strings, tool
    or function definitions, agent loops, MCP configs (`.mcp.json`,
    settings), retrieval code. If there is none, return an empty result.
-2. **Invoke** the `codexpiator-ai-integration` skill (real skill
+2. **Invoke** the `codexpiator:ai-integration` skill (real skill
    invocation) and read `llm-integration-patterns`,
    `prompt-engineering-basics`, `agentic-and-tool-use-safety` and
    `mcp-usage-and-recommendations` as relevant.

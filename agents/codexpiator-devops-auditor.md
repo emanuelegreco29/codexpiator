@@ -18,7 +18,7 @@ fine.
    compose files, `.dockerignore`, env files and `.env.example`,
    deploy configs (`vercel.json`, `fly.toml`, Terraform, Kubernetes
    manifests...), logging/metrics/tracing setup, health checks.
-2. **Invoke** the `codexpiator-devops` skill (real skill invocation)
+2. **Invoke** the `codexpiator:devops` skill (real skill invocation)
    and read `ci-cd-pipelines`, `environments-and-config`,
    `containerization`, `observability-and-monitoring`,
    `incident-response-and-rollback` and `deployment-platforms` as

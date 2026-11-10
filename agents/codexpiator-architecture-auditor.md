@@ -18,7 +18,7 @@ codebase, not a general preference.
    module boundaries, dependency direction between modules, entry
    points, where state and data access live. Read enough files to see
    the actual coupling, not just the tree.
-2. **Invoke** the `codexpiator-architecture` skill (real skill
+2. **Invoke** the `codexpiator:architecture` skill (real skill
    invocation) and read `project-structure-conventions`,
    `design-patterns-catalog`, `api-contracts-and-versioning`,
    `scalability-and-tradeoffs` and `monolith-vs-microservices` as

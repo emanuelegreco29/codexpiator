@@ -14,7 +14,7 @@ compactly. Never fix anything, never narrate what you found fine.
 
 1. Confirm your scope (paths, or a diff command to run). Map source
    files to their tests; read both.
-2. **Invoke** the `codexpiator-testing-qa` skill (real skill
+2. **Invoke** the `codexpiator:testing-qa` skill (real skill
    invocation) and read `testing-pyramid-and-strategy`,
    `mocking-and-test-data`, `tdd-workflow` and `ci-quality-gates` as
    relevant. For frontend tests also read

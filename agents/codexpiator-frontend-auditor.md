@@ -15,7 +15,7 @@ compactly. Never fix anything, never narrate files you found clean.
 1. Confirm your scope (paths, or a diff command to run) and read the
    actual frontend files in it. If there is no frontend code, return an
    empty result.
-2. **Invoke** the `codexpiator-frontend` skill (real skill invocation,
+2. **Invoke** the `codexpiator:frontend` skill (real skill invocation,
    not opening its file) and read the resource files relevant to what
    you find: `component-architecture`, `state-management`,
    `styling-and-css`, `forms-and-validation`, `routing-and-navigation`,

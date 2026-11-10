@@ -11,21 +11,21 @@ Codexpiator's guidance.
    existing stack signals in the project (`package.json`,
    `pyproject.toml`, `go.mod`, etc.). If none are found and none was
    given, call `AskUserQuestion` rather than guessing.
-2. Invoke `codexpiator-architecture` for folder layout (feature-based
-   by default) and `codexpiator-dx-git` for repo hygiene basics.
+2. Invoke `codexpiator:architecture` for folder layout (feature-based
+   by default) and `codexpiator:dx-git` for repo hygiene basics.
 3. Scaffold, only where missing (never overwrite an existing file
    without explicit confirmation first): `.gitignore` (including every
    Claude/skill-tool artifact directory per
-   `codexpiator-dx-git`'s repo-hygiene guidance — `.claude/`,
+   `codexpiator:dx-git`'s repo-hygiene guidance — `.claude/`,
    `.superpowers/`, `.playwright/`, `.docs/`, `.codexpiator/`, and any
    others observed in this environment), `.env.example`, a README
    skeleton (what it is, how to run it, how to contribute), and a CI
    config skeleton appropriate to the stack (lint, type-check, test
-   stages — invoke `codexpiator-testing-qa` for what should gate).
+   stages — invoke `codexpiator:testing-qa` for what should gate).
 4. For a Python backend, confirm `uv`/`pdm`/`poetry` is set up (per
    `${CLAUDE_PLUGIN_ROOT}/shared/stack-recommendations.md`) rather than a bare
    `requirements.txt`, and that Ruff is configured.
-5. For a frontend, invoke `codexpiator-frontend` and confirm Prettier,
+5. For a frontend, invoke `codexpiator:frontend` and confirm Prettier,
    a type checker, and the folder-per-component convention are
    reflected in the scaffolded structure.
 6. Language: follow `${CLAUDE_PLUGIN_ROOT}/shared/user-language.md`
