@@ -67,11 +67,12 @@ mandatory pre-completion gates), and treat a missing security test for
 any of the applicable classes above as a gap in the same way a missing
 functional test would be.
 
-## When to escalate to `security-review`
+## Always pair with `claude-security`
 
 This file's tests are the baseline any Codexpiator user should be able
-to write and run directly. For anything genuinely high-stakes (payment
-flows, auth systems, data export features, anything handling
-regulated data), also attempt the specialized `security-review` skill
-per `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md` — a dedicated security review can probe
-further than a fixed checklist of test cases can anticipate.
+to write and run directly. Pair them with the `claude-security` plugin
+per `${CLAUDE_PLUGIN_ROOT}/shared/claude-security-plugin.md` (installed
+if missing) — on payment flows, auth systems, data export features and
+anything handling regulated data it is not optional. A dedicated
+security review can probe further than a fixed checklist of test cases
+can anticipate. Add `security-review` too when available.

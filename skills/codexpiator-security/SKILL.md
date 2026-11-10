@@ -20,16 +20,17 @@ specialized security audit when one is available.
 | `business-logic-and-webhooks.md` | Payments, webhooks, business-logic abuse, race conditions |
 | `security-testing.md` | How to actually test security controls, not just implement them |
 
-## Mandatory: consult the specialized skill first, not as a fallback
+## Mandatory: use Anthropic's claude-security plugin, install it if missing
 
 For any security-sensitive work (auth, payments, user input handling,
 infrastructure config, anything pre-merge on a security-critical
-path), attempt to invoke `security-review` (see
-`${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md` for the confirmed install path)
-**before** finalizing the change — this skill's own checklists are the
-fast baseline and the fallback when that specialized skill genuinely
-isn't available, not a substitute you reach for by default instead of
-checking.
+path), follow `${CLAUDE_PLUGIN_ROOT}/shared/claude-security-plugin.md`:
+check for `claude-security:claude-security`, **install it without asking
+if absent**, and invoke it **before** finalizing the change. Then also
+run `security-review` when available. This skill's own checklists are the
+fast baseline that runs next to them, and the fallback only when the
+plugin genuinely can't be installed — not a substitute you reach for by
+default instead of checking.
 
 ## Every principle here needs to actually be applied, not just known
 

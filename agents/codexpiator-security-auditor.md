@@ -16,9 +16,14 @@ Never fix anything, never narrate files you found clean.
    actual files in it, following data from entry points (routes,
    handlers, webhooks, CLI args, file uploads) to sinks (queries,
    commands, file paths, HTML output, outbound requests).
-2. If the `security-review` skill is available, **invoke** it first
-   (see `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`; it leads, this skill is
-   the baseline). If it isn't, continue without comment.
+2. If your prompt includes findings from the `claude-security` plugin
+   (run by the launching command, see
+   `${CLAUDE_PLUGIN_ROOT}/shared/claude-security-plugin.md`), verify and
+   merge them instead of re-deriving; mark each finding's source. If the
+   `security-review` skill is available, **invoke** it too (see
+   `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`). If your
+   prompt says `claude-security` was missing or failed, mention that in
+   one line in the output; you cannot install it (read-only).
 3. **Invoke** the `codexpiator-security` skill and verify each
    applicable item: `secure-coding-checklist`, `authn-authz-patterns`
    (IDOR/BOLA, session handling, password reset, MFA),

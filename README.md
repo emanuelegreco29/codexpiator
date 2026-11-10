@@ -9,7 +9,7 @@
 Frontend · Backend · Security · Testing · Architecture · DevOps · Git/DX · AI Integration. One plugin, nine skills, zero fluff.
 
 [![License: MIT](https://img.shields.io/github/license/emanuelegreco29/codexpiator?color=blue)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.4.0-brightgreen)](.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-1.4.1-brightgreen)](.claude-plugin/plugin.json)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-6c47ff)](https://github.com/emanuelegreco29/codexpiator)
 [![Skills](https://img.shields.io/badge/skills-9-orange)](#-topic-skills)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4)](https://github.com/emanuelegreco29/codexpiator/pulls)
@@ -163,7 +163,8 @@ actually confirmed:
 
 | Skill | For |
 |---|---|
-| `security-review` | Deep, specialized security audits |
+| `claude-security` (Anthropic) | Deep security scans and patches. Mandatory: auto-installed if missing, used on virtually all security work. See [`shared/claude-security-plugin.md`](shared/claude-security-plugin.md) |
+| `security-review` | Second-pass specialized security review |
 | `frontend-design` | Distinctive, non-generic UI implementation |
 | `design-motion-principles` | Motion & interaction design |
 | `impeccable` | Broad frontend polish/critique pass |

@@ -1,8 +1,13 @@
 ---
 description: Full audit, all specialist auditors in parallel (frontend, backend, security, testing, architecture, devops, AI, hygiene)
 argument-hint: "[path (optional)]"
-allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
+allowed-tools: Agent, Task, Skill, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*), Bash(claude plugin:*)
 ---
+
+Before launching, follow `${CLAUDE_PLUGIN_ROOT}/shared/claude-security-plugin.md`
+in this main thread (check, install if missing, invoke
+`claude-security:claude-security` on the scope) and pass its findings to
+`codexpiator-security-auditor`.
 
 Run a full audit by launching the specialist auditor agents through the
 Agent/Task tool, following `${CLAUDE_PLUGIN_ROOT}/shared/audit-dispatch.md` (scope, model

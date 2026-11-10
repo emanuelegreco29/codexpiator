@@ -1,12 +1,16 @@
 ---
 description: Review a diff or PR against Codexpiator's checklists using specialist auditors
 argument-hint: "[pr-number-or-branch (optional)]"
-allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*), Bash(gh:*)
+allowed-tools: Agent, Task, Skill, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*), Bash(gh:*), Bash(claude plugin:*)
 ---
 
 Review a change against Codexpiator's checklists, complementary to, not
 a replacement for, `/code-review` and `security-review` when those are
-available.
+available. When the diff touches a security surface (see the
+security-auditor bullet below), first follow
+`${CLAUDE_PLUGIN_ROOT}/shared/claude-security-plugin.md` in this main
+thread (install `claude-security` if missing, invoke it on the diff) and
+pass its findings to `codexpiator-security-auditor`.
 
 1. Determine the target: if `$1` is given, treat it as a PR number or
    branch (`gh pr diff $1` or `git diff main...$1` as appropriate);
