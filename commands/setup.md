@@ -28,7 +28,10 @@ Codexpiator's guidance.
 5. For a frontend, invoke `codexpiator-frontend` and confirm Prettier,
    a type checker, and the folder-per-component convention are
    reflected in the scaffolded structure.
-6. Attribution question, asked **once per project**. Skip it if
+6. Language: follow `${CLAUDE_PLUGIN_ROOT}/shared/user-language.md`
+   (skip if a `Language:` line is already recorded in `CLAUDE.md`):
+   detect the user's language, record it, and use it from here on.
+7. Attribution question, asked **once per project**. Skip it if
    `.claude/settings.json` already has an `attribution` key, or the
    project's `CLAUDE.md` has a `Commit attribution:` line under
    `## Codexpiator preferences`. Otherwise call `AskUserQuestion`:
@@ -49,10 +52,10 @@ Codexpiator's guidance.
    Never re-ask on later runs. This only edits settings the user
    approved; it does not install hooks or scripts, and it never
    restricts which Bash commands Claude may run.
-7. Subagent models question, asked **once per project**, following
+8. Subagent models question, asked **once per project**, following
    `${CLAUDE_PLUGIN_ROOT}/shared/model-routing.md` (skip if a `Subagent models:` line is
    already recorded in `CLAUDE.md`): recommended models, session
    default, or choose per agent. Record the answer as that file says.
-8. Report exactly what was created/left alone, and suggest
+9. Report exactly what was created/left alone, and suggest
    `/codexpiator:audit` once real code exists to check against these
    conventions.

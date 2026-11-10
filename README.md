@@ -45,6 +45,10 @@ Codexpiator ships no hooks and no scripts: it never runs code on its
 own and never restricts which Bash commands Claude can run. Everything
 is done by Claude, as visible actions, after asking you.
 
+Codexpiator answers in your language. It detects it from your messages,
+saves it as `Language:` in the project's `CLAUDE.md`, and keeps using it
+until you ask for another one.
+
 `/codexpiator:setup` asks you, **once per project**:
 
 - **Commit attribution**: keep Claude's attribution (`Co-Authored-By`

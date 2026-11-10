@@ -37,6 +37,12 @@ A request can span more than one domain (e.g. "add a login feature"
 touches frontend, backend, and security). In that case, consult each
 relevant skill for its slice rather than picking just one.
 
+## Language
+
+Answer in the user's language and remember it, per
+`${CLAUDE_PLUGIN_ROOT}/shared/user-language.md`. Every `codexpiator-*`
+skill follows this.
+
 ## Long or complex work
 
 For anything substantial (multi-step, many files, spans multiple

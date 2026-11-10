@@ -97,6 +97,10 @@ user can judge.
 
 ## Persisting user preferences
 
+The user's language is one such preference and is handled by
+`${CLAUDE_PLUGIN_ROOT}/shared/user-language.md`: detect it, save it as
+`Language:`, keep using it.
+
 When the user makes a choice about how Codexpiator should behave going
 forward in a given project — commit autonomy level (see
 `codexpiator-dx-git/commit-and-pr-conventions.md`), a stack default, a

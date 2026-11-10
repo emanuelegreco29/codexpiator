@@ -46,6 +46,10 @@ print one line per finding:
 
 `path:line — severity — problem — fix`
 
+Write the problem and fix text in the user's saved language per
+`${CLAUDE_PLUGIN_ROOT}/shared/user-language.md` (paths, code and
+identifiers stay as they are).
+
 Mark findings that carry `conf` below 1 as "unverified". Do not
 re-narrate what came back clean, do not apply fixes unless the user asks
 after seeing the list. If every auditor returned an empty list, say so
