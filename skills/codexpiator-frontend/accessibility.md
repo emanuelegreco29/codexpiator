@@ -1,5 +1,9 @@
 # Accessibility
 
+## Motion and gesture patterns
+
+Every animation, view transition, swipe gesture or hit-stop effect from `ux-polish-patterns.md` must honor `prefers-reduced-motion` and have a keyboard and screen-reader equivalent (close button and Escape for sheets, live-region undo toasts, visible focus).
+
 ## Semantic HTML before ARIA
 
 "No ARIA is better than bad ARIA." A native `<button>` already has

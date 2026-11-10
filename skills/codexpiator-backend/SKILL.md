@@ -37,6 +37,9 @@ Before considering backend work done:
    relevant) — not just the happy path. Run the full test suite, not
    just the new tests in isolation. See `backend-testing.md` and
    `codexpiator-testing-qa/tdd-workflow.md`.
+2b. Any new non-idempotent create/payment/webhook endpoint has
+   idempotency-key handling (`api-design.md`); propose it if the user
+   didn't ask.
 3. For anything security-sensitive (auth, input handling, data
    access), also invoke the `codexpiator-security` skill and run its
    relevant checks — security behavior needs to be tested as

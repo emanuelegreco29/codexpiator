@@ -20,11 +20,16 @@ compactly. Never fix anything, never narrate files you found clean.
    you find: `component-architecture`, `state-management`,
    `styling-and-css`, `forms-and-validation`, `routing-and-navigation`,
    `responsive-and-mobile`, `frontend-performance`, `frontend-testing`,
-   `accessibility`, `seo-and-launch-checklist`,
+   `accessibility`, `ux-polish-patterns`, `seo-and-launch-checklist`,
    `seo-strategy-and-ai-visibility`.
 3. If `web-design-guidelines` is available as a skill, invoke it for the
    accessibility/UX pass (see `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`).
    If it isn't, use `accessibility.md` and say nothing more about it.
+3b. Check `ux-polish-patterns`: flag missing DEFAULT patterns (no skeleton
+   on async content, jittering numbers, unbalanced headings, ignored safe
+   areas, wrong OTP input attributes, non-interruptible animations,
+   hover flyouts without safe triangle, confirm dialogs where an undo
+   toast fits). Flag PROPOSE patterns only as low-severity suggestions.
 4. Verify each applicable checklist item against the real code. Also
    look for unused dependencies, excessive boilerplate, duplicated
    components or logic, and code that contradicts itself or its tests.
@@ -34,7 +39,7 @@ compactly. Never fix anything, never narrate files you found clean.
 
 Return one JSON object following
 `${CLAUDE_PLUGIN_ROOT}/shared/findings-contract.md` and nothing else.
-Preferred `cat` tags: `a11y`, `state`, `css`, `perf`, `seo`, `dup`, `dead-code`, `test-gap`, etc.
+Preferred `cat` tags: `a11y`, `state`, `css`, `perf`, `seo`, `ux-polish`, `dup`, `dead-code`, `test-gap`, etc.
 
 ## Must not
 

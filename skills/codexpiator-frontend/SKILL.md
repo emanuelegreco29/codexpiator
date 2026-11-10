@@ -20,6 +20,7 @@ trying to hold all of it in one place.
 | `frontend-performance.md` | Bundle size, lazy loading, images, layout shift |
 | `frontend-testing.md` | What to unit/integration/E2E test on the frontend |
 | `accessibility.md` | Semantic HTML, ARIA, keyboard nav, contrast, focus management |
+| `ux-polish-patterns.md` | Building or reviewing any UI: skeletons, optimistic updates, undo toasts, command menu, shortcut hints, SWR, pre-rendering, blurhash, view transitions, swipe sheets, interruptible animations, predictive back, hit stop, safe areas, OTP autofill, tabular numbers, balanced headlines, continuous corners, safe triangles |
 | `seo-and-launch-checklist.md` | Pre-launch pass: metadata, SEO tags, legal pages, conversion essentials |
 | `seo-strategy-and-ai-visibility.md` | Deep SEO strategy + GEO: ranking in Google/Bing/DuckDuckGo and being cited by AI answer engines |
 
@@ -32,6 +33,20 @@ skill's own guidance, and that file has the procedure for checking.
 This is not optional for design-heavy work: attempt to consult the
 relevant external design skill(s) before finalizing an answer, not
 only as a fallback when you happen to remember to check.
+
+## Apply UX polish patterns by default
+
+For any UI work, read `ux-polish-patterns.md` and apply every
+**DEFAULT** pattern that fits the screen without being asked (skeleton
+loaders, tabular numbers, balanced headlines, safe-area insets,
+one-time-code autofill, interruptible animations, shortcut hints, undo
+toasts, stale-while-revalidate, safe triangles on hover flyouts,
+predictive-back-friendly navigation). **PROPOSE** the others in one line
+when the situation fits (optimistic updates, command menu, view
+transitions, swipe-to-dismiss sheets, pre-rendering, blurhash, continuous
+corners), and use `AskUserQuestion` when several apply. Hit stop only for
+game-like UI. When the user names one of these, implement it. In the
+final message, say which you applied and which you skipped and why.
 
 ## Verify visually with Playwright
 
@@ -109,6 +124,8 @@ Before considering frontend work done:
    etc. — whichever apply to the change) plus any applicable external
    design skill from `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`, not just the first one
    that seems relevant.
+1b. **Check `ux-polish-patterns.md`** against the change: applied the
+   DEFAULT patterns that fit, proposed the PROPOSE ones that fit.
 2. **Run Prettier (or the project's configured formatter) and a type
    check** and resolve everything they flag. Never report frontend
    work complete with unformatted code or type errors outstanding.

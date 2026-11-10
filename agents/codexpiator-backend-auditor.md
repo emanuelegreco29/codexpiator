@@ -19,7 +19,7 @@ compactly. Never fix anything, never narrate files you found clean.
    and read the resource files relevant to what you find: `api-design`,
    `data-modeling-and-db`, `auth-and-authorization`,
    `error-handling-and-logging`, `caching-strategies`,
-   `background-jobs-and-queues`, `resilience-and-rate-limiting`,
+   `background-jobs-and-queues`, `resilience-and-rate-limiting` (flag missing idempotency keys on payment, order-creation and webhook endpoints),
    `backend-performance`, `backend-testing`.
 3. Check the stack policy in `${CLAUDE_PLUGIN_ROOT}/shared/stack-recommendations.md` for the
    languages you find. For Python: `uv`/`pdm`/`poetry` with a lockfile

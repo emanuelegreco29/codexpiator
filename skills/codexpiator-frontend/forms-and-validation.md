@@ -43,6 +43,10 @@ rejects, or vice versa, because the rules were hand-written twice.
   a summary-only approach forces the user to hunt for which field is
   wrong.
 
+## One-time-code and other autofill
+
+OTP/2FA/SMS fields use `autocomplete="one-time-code"` and numeric input mode; use correct `autocomplete` tokens (`email`, `current-password`, `new-password`, `name`, `tel`, `street-address`...) everywhere else. Details in `ux-polish-patterns.md`.
+
 ## Accessible error association
 
 Associate an error message with its field programmatically

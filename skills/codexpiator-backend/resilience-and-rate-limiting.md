@@ -16,7 +16,9 @@ exponential backoff plus a small random jitter — jitter prevents many
 clients from retrying in synchronized bursts that re-overwhelm the
 struggling dependency right as it starts recovering. Don't retry
 errors that indicate the request itself is wrong (4xx client errors)
-— retrying those just repeats the same failure.
+— retrying those just repeats the same failure. Only retry unsafe
+requests (POST) when they carry an idempotency key
+(`api-design.md`).
 
 ## Circuit breakers
 

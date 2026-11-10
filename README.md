@@ -9,7 +9,7 @@
 Frontend · Backend · Security · Testing · Architecture · DevOps · Git/DX · AI Integration. One plugin, nine skills, zero fluff.
 
 [![License: MIT](https://img.shields.io/github/license/emanuelegreco29/codexpiator?color=blue)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.4.1-brightgreen)](.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-1.4.2-brightgreen)](.claude-plugin/plugin.json)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-6c47ff)](https://github.com/emanuelegreco29/codexpiator)
 [![Skills](https://img.shields.io/badge/skills-9-orange)](#-topic-skills)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4)](https://github.com/emanuelegreco29/codexpiator/pulls)
@@ -83,7 +83,7 @@ until you ask for another one.
 
 | Skill | Covers |
 |---|---|
-| 🎨 `codexpiator-frontend` | Component architecture, state management, styling/CSS, forms & validation, routing, responsive/mobile, performance, accessibility, SEO & AI-search visibility (GEO) |
+| 🎨 `codexpiator-frontend` | Component architecture, state management, styling/CSS, forms & validation, routing, responsive/mobile, performance, accessibility, UX polish patterns (skeletons, optimistic updates, undo toasts, view transitions, safe triangles...), SEO & AI-search visibility (GEO) |
 | ⚙️ `codexpiator-backend` | API design, data modeling & DB, auth & authorization, error handling & logging, caching, background jobs & queues, resilience & rate limiting, performance, testing |
 | 🔒 `codexpiator-security` | Secure coding checklist, authn/authz hardening, injection defense (SQLi/XSS/CSRF/SSRF/...), secrets & config, dependency/supply-chain risk, infra & access control, business-logic/webhook security, security testing |
 | ✅ `codexpiator-testing-qa` | Testing pyramid & strategy, TDD workflow, mocking & test data, CI quality gates |

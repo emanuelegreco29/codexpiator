@@ -28,6 +28,8 @@ indicators, rounded corners) using the platform's safe-area insets
 (bottom navigation, floating action buttons) so it isn't obscured or
 placed unreachably close to a device edge.
 
+Also set `viewport-fit=cover` so the insets are non-zero. More mobile polish (swipe-to-dismiss sheets, predictive back) is in `ux-polish-patterns.md`.
+
 ## Avoiding hover-only interactions
 
 Hover has no equivalent on touch devices — any interaction that's

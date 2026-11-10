@@ -37,6 +37,10 @@ component state is for. Mixing the two — putting fetched data into
 the same store as UI toggles — tends to produce a store that's
 responsible for too much and hard to reason about.
 
+## Stale-while-revalidate and optimistic updates
+
+Server state should render cached data instantly and revalidate in the background, and low-risk mutations can update optimistically with rollback. See `ux-polish-patterns.md` for when each applies.
+
 ## When a full state library is overkill
 
 Most CRUD-shaped apps need: a server-state cache layer, plus local

@@ -43,7 +43,7 @@ correct under concurrent writes and stays fast regardless of how deep
 you paginate. Use offset pagination only for small, rarely-changing
 datasets where its simplicity outweighs these downsides.
 
-## Idempotency for unsafe methods
+## Idempotency for unsafe methods (idempotency keys)
 
 For any `POST` that creates something and might reasonably be retried
 by a client (network failure ambiguity, a double-click, an
@@ -52,6 +52,23 @@ idempotency key from the client and store which keys have already been
 processed, so a retried request with the same key returns the original
 result instead of creating a duplicate. This matters most for
 anything with a real-world side effect (payments, order creation).
+
+Make it a default, not an afterthought, for every non-idempotent
+`POST`/`PATCH` that creates money movement, orders, messages, emails or
+resources, and for every webhook handler:
+
+- Client sends an `Idempotency-Key` header (a fresh UUID per user
+  intent, reused on retry, generated when the form is first shown so a
+  double-click and an optimistic-update retry share it).
+- Server stores `(key, request fingerprint, status, response)` in one
+  atomic step (unique constraint, not check-then-insert), with a TTL
+  (e.g. 24h).
+- Same key and same payload returns the stored response; same key with
+  a different payload returns `422`/`409`; a request still in flight
+  returns `409` or waits.
+- Forward the key to downstream providers that support it (Stripe etc.).
+- Test it: duplicate request, concurrent duplicates, retry after
+  timeout, same key with a different body.
 
 ## Compress responses, don't ship raw JSON
 
