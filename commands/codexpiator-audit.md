@@ -1,6 +1,6 @@
 ---
 description: Full audit, all specialist auditors in parallel (frontend, backend, security, testing, architecture, devops, AI, hygiene)
-argument-hint: [path (optional)]
+argument-hint: "[path (optional)]"
 allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
 ---
 

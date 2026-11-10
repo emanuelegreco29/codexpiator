@@ -1,6 +1,6 @@
 ---
 description: Backend-only audit (API, data, auth implementation, errors, caching, jobs, resilience)
-argument-hint: [path (optional)]
+argument-hint: "[path (optional)]"
 allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
 ---
 

@@ -1,6 +1,6 @@
 ---
 description: Testing/QA audit (coverage of real behavior, edge cases, flaky or over-mocked tests, CI gates)
-argument-hint: [path (optional)]
+argument-hint: "[path (optional)]"
 allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
 ---
 

@@ -1,6 +1,6 @@
 ---
 description: Bootstrap project structure using Codexpiator conventions
-argument-hint: [stack (optional)]
+argument-hint: "[stack (optional)]"
 allowed-tools: Skill, Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion
 ---
 

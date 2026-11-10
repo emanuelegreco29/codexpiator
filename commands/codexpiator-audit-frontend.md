@@ -1,6 +1,6 @@
 ---
 description: Frontend-only audit (components, state, CSS, forms, a11y, performance, SEO)
-argument-hint: [path (optional)]
+argument-hint: "[path (optional)]"
 allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
 ---
 

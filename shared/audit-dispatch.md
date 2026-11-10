@@ -28,7 +28,9 @@ accordingly (omit it for the session default).
 ## 3. Launch
 
 Launch every selected auditor **in parallel**, all Agent/Task calls in
-a single message. Give each one: the scope (paths or the diff command to
+a single message. Set `subagent_type` to the plugin-namespaced agent
+type, e.g. `codexpiator:codexpiator-security-auditor`; if the
+environment lists the agent under its bare name instead, use that. Give each one: the scope (paths or the diff command to
 run), the instruction to also report unused dependencies, excessive
 boilerplate, duplicated logic and logical inconsistencies within its
 domain, and nothing else. The auditors are read-only and cannot fix

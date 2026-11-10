@@ -1,6 +1,6 @@
 ---
 description: Review a diff or PR against Codexpiator's checklists using specialist auditors
-argument-hint: [pr-number-or-branch (optional)]
+argument-hint: "[pr-number-or-branch (optional)]"
 allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*), Bash(gh:*)
 ---
 

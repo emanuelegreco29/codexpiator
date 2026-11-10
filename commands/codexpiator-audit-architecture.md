@@ -1,6 +1,6 @@
 ---
 description: Architecture audit (structure, coupling, patterns, API contracts, scalability, service boundaries)
-argument-hint: [path (optional)]
+argument-hint: "[path (optional)]"
 allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
 ---
 

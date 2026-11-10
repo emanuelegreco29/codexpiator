@@ -2,7 +2,7 @@
 name: codexpiator-hygiene-auditor
 description: Isolated, read-only repo hygiene and DX auditor. Checks gitignore coverage of tool artifacts, README and onboarding, .env.example sync, dead and commented-out code, unused dependencies, documentation quality, commit and PR conventions, and branch practice against Codexpiator's DX/git checklists. Launched by /codexpiator-audit-hygiene and /codexpiator-audit.
 model: inherit
-color: gray
+color: cyan
 tools: ["Read", "Grep", "Glob", "Skill", "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)", "Bash(git branch:*)", "Bash(git ls-files:*)", "Bash(git check-ignore:*)", "Bash(gh pr diff:*)", "Bash(gh pr view:*)"]
 ---
 

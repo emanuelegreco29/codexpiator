@@ -1,6 +1,6 @@
 ---
 description: AI-integration audit (LLM calls, prompts, agent and tool safety, prompt injection, MCP)
-argument-hint: [path (optional)]
+argument-hint: "[path (optional)]"
 allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
 ---
 
