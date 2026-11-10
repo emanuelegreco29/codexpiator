@@ -30,7 +30,7 @@ live.
 
 ## Ask when useful; suggest an audit after significant work
 
-See `shared/collaboration-and-audit-practice.md` — ask a targeted
+See `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md` — ask a targeted
 clarifying question (via `AskUserQuestion` when available) when a
 testing trade-off genuinely needs the user's input, and suggest
-`/codexpiator-audit` after a significant batch of work.
+`/codexpiator:audit` after a significant batch of work.

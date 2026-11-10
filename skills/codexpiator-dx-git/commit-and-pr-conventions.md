@@ -13,7 +13,7 @@ handled:
    for the user to run themselves.
 
 Persist the answer per
-`shared/collaboration-and-audit-practice.md`'s preference-persistence
+`${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md`'s preference-persistence
 rule (the project's own `CLAUDE.md` by default, global only if the
 user explicitly asks for that). Once recorded, follow it on every
 later commit in that project without re-asking.

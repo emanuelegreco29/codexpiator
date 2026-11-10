@@ -18,8 +18,8 @@ experience.
 
 ## Ask when useful; suggest an audit after significant work
 
-See `shared/collaboration-and-audit-practice.md` — ask (via
+See `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md` — ask (via
 `AskUserQuestion` when available) when a workflow/convention choice
-genuinely needs the user's call, and suggest `/codexpiator-audit`
+genuinely needs the user's call, and suggest `/codexpiator:audit`
 after a significant batch of changes, before opening the PR.
 

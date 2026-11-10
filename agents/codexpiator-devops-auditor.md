@@ -1,6 +1,6 @@
 ---
 name: codexpiator-devops-auditor
-description: Isolated, read-only DevOps auditor. Checks CI/CD pipelines, environment and config handling, Dockerfiles and containers, observability and alerting, rollback and incident readiness, and deployment setup against Codexpiator's devops checklists. Launched by /codexpiator-audit-devops and /codexpiator-audit.
+description: Isolated, read-only DevOps auditor. Checks CI/CD pipelines, environment and config handling, Dockerfiles and containers, observability and alerting, rollback and incident readiness, and deployment setup against Codexpiator's devops checklists. Launched by /codexpiator:audit-devops and /codexpiator:audit.
 model: inherit
 color: orange
 tools: ["Read", "Grep", "Glob", "Skill", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)", "Bash(gh pr diff:*)", "Bash(gh pr view:*)"]
@@ -38,23 +38,9 @@ fine.
 
 ## Output format
 
-Your output is read by the dispatching command, not the user. Return
-one JSON object and nothing else:
-
-```json
-{"v":1,"n":2,"sev_max":"H","f":[
-  {"sev":"H","cat":"container","loc":"Dockerfile:12","desc":"runs as root","fix":"add a non-root USER"},
-  {"sev":"M","cat":"ci-gate","loc":".github/workflows/ci.yml:20","desc":"tests run with continue-on-error","fix":"make the job block the merge","conf":0.9}
-]}
-```
-
-- `sev`: `C`/`H`/`M`/`L`. `cat`: short tag (`ci-gate`, `ci-order`,
-  `pin`, `container`, `config`, `env-drift`, `observability`,
-  `rollback`, `secret`...). `loc`: `path:line`.
-- `conf` (0 to 1) only when not fully certain; omit when certain.
-- `f` sorted most severe first, `n` its length, `sev_max` the highest
-  severity or `null` when empty.
-- No entries for sound areas, no praise, no prose outside the JSON.
+Return one JSON object following
+`${CLAUDE_PLUGIN_ROOT}/shared/findings-contract.md` and nothing else.
+Preferred `cat` tags: `ci-gate`, `ci-order`, `pin`, `container`, `config`, `env-drift`, `observability`, `rollback`, `secret`, etc.
 
 ## Must not
 

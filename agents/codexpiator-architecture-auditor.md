@@ -1,6 +1,6 @@
 ---
 name: codexpiator-architecture-auditor
-description: Isolated, read-only architecture auditor. Checks project structure, coupling and layering, misapplied design patterns, API contract and versioning discipline, premature or missing scalability decisions, and monolith vs microservices boundaries against Codexpiator's architecture checklists. Launched by /codexpiator-audit-architecture and /codexpiator-audit.
+description: Isolated, read-only architecture auditor. Checks project structure, coupling and layering, misapplied design patterns, API contract and versioning discipline, premature or missing scalability decisions, and monolith vs microservices boundaries against Codexpiator's architecture checklists. Launched by /codexpiator:audit-architecture and /codexpiator:audit.
 model: inherit
 color: purple
 tools: ["Read", "Grep", "Glob", "Skill", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)", "Bash(gh pr diff:*)", "Bash(gh pr view:*)"]
@@ -39,23 +39,9 @@ codebase, not a general preference.
 
 ## Output format
 
-Your output is read by the dispatching command, not the user. Return
-one JSON object and nothing else:
-
-```json
-{"v":1,"n":2,"sev_max":"H","f":[
-  {"sev":"H","cat":"coupling","loc":"billing/index.ts:1","desc":"billing imports orders internals and orders imports billing: circular","fix":"extract shared types or invert via an interface","conf":0.8},
-  {"sev":"M","cat":"api-compat","loc":"routes/users.py:55","desc":"field renamed in v1 response without deprecation","fix":"keep old field, deprecate"}
-]}
-```
-
-- `sev`: `C`/`H`/`M`/`L`. `cat`: short tag (`coupling`, `layering`,
-  `god-module`, `pattern`, `api-compat`, `premature-scale`,
-  `dist-monolith`, `structure`, `dup`...). `loc`: `path:line`.
-- `conf` (0 to 1) only when not fully certain; omit when certain.
-- `f` sorted most severe first, `n` its length, `sev_max` the highest
-  severity or `null` when empty.
-- No entries for sound areas, no praise, no prose outside the JSON.
+Return one JSON object following
+`${CLAUDE_PLUGIN_ROOT}/shared/findings-contract.md` and nothing else.
+Preferred `cat` tags: `coupling`, `layering`, `god-module`, `pattern`, `api-compat`, `premature-scale`, `dist-monolith`, `structure`, `dup`, etc.
 
 ## Must not
 

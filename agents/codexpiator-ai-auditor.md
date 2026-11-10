@@ -1,6 +1,6 @@
 ---
 name: codexpiator-ai-auditor
-description: Isolated, read-only AI-integration auditor. Checks LLM call patterns, prompt quality and versioning, agent and tool-use safety (prompt injection, excessive permissions, unvalidated model output, unbounded loops), and MCP usage against Codexpiator's AI-integration checklists. Launched by /codexpiator-audit-ai and /codexpiator-audit.
+description: Isolated, read-only AI-integration auditor. Checks LLM call patterns, prompt quality and versioning, agent and tool-use safety (prompt injection, excessive permissions, unvalidated model output, unbounded loops), and MCP usage against Codexpiator's AI-integration checklists. Launched by /codexpiator:audit-ai and /codexpiator:audit.
 model: inherit
 color: yellow
 tools: ["Read", "Grep", "Glob", "Skill", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)", "Bash(gh pr diff:*)", "Bash(gh pr view:*)"]
@@ -37,24 +37,9 @@ is fine.
 
 ## Output format
 
-Your output is read by the dispatching command, not the user. Return
-one JSON object and nothing else:
-
-```json
-{"v":1,"n":2,"sev_max":"H","f":[
-  {"sev":"H","cat":"prompt-injection","loc":"agent.py:40","desc":"fetched page text appended to the system prompt","fix":"pass it as delimited data, never as instructions"},
-  {"sev":"M","cat":"loop-bound","loc":"agent.py:75","desc":"while True tool loop with no step limit","fix":"cap iterations and cost","conf":0.9}
-]}
-```
-
-- `sev`: `C`/`H`/`M`/`L`. `cat`: short tag (`prompt-injection`,
-  `excess-perm`, `no-approval`, `unvalidated-output`, `loop-bound`,
-  `structured-output`, `resilience`, `prompt-hygiene`, `mcp`,
-  `audit-log`...). `loc`: `path:line`.
-- `conf` (0 to 1) only when not fully certain; omit when certain.
-- `f` sorted most severe first, `n` its length, `sev_max` the highest
-  severity or `null` when empty.
-- No entries for sound areas, no praise, no prose outside the JSON.
+Return one JSON object following
+`${CLAUDE_PLUGIN_ROOT}/shared/findings-contract.md` and nothing else.
+Preferred `cat` tags: `prompt-injection`, `excess-perm`, `no-approval`, `unvalidated-output`, `loop-bound`, `structured-output`, `resilience`, `prompt-hygiene`, `mcp`, `audit-log`, etc.
 
 ## Must not
 

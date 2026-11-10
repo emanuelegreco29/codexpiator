@@ -30,7 +30,7 @@ approach.
 Before considering backend work done:
 1. For a Python project, confirm dependencies are managed via `uv`,
    `pdm`, or `poetry` and the code passes Ruff (see
-   `shared/stack-recommendations.md`).
+   `${CLAUDE_PLUGIN_ROOT}/shared/stack-recommendations.md`).
 2. **Write and run real tests covering every function/endpoint
    touched, including edge cases** (empty input, boundary values,
    invalid/malformed input, concurrent-write scenarios where
@@ -42,8 +42,8 @@ Before considering backend work done:
    relevant checks — security behavior needs to be tested as
    thoroughly as functional behavior, not assumed correct because it
    looks right.
-4. Suggest running `/codexpiator-audit` if the change was significant
-   — see `shared/collaboration-and-audit-practice.md`.
+4. Suggest running `/codexpiator:audit` if the change was significant
+   — see `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md`.
 
 Also see that same shared file for when to ask a clarifying question
 (`AskUserQuestion` when available) instead of guessing.

@@ -23,7 +23,7 @@ Codexpiator's guidance.
    config skeleton appropriate to the stack (lint, type-check, test
    stages — invoke `codexpiator-testing-qa` for what should gate).
 4. For a Python backend, confirm `uv`/`pdm`/`poetry` is set up (per
-   `shared/stack-recommendations.md`) rather than a bare
+   `${CLAUDE_PLUGIN_ROOT}/shared/stack-recommendations.md`) rather than a bare
    `requirements.txt`, and that Ruff is configured.
 5. For a frontend, invoke `codexpiator-frontend` and confirm Prettier,
    a type checker, and the folder-per-component convention are
@@ -50,9 +50,9 @@ Codexpiator's guidance.
    approved; it does not install hooks or scripts, and it never
    restricts which Bash commands Claude may run.
 7. Subagent models question, asked **once per project**, following
-   `shared/model-routing.md` (skip if a `Subagent models:` line is
+   `${CLAUDE_PLUGIN_ROOT}/shared/model-routing.md` (skip if a `Subagent models:` line is
    already recorded in `CLAUDE.md`): recommended models, session
    default, or choose per agent. Record the answer as that file says.
 8. Report exactly what was created/left alone, and suggest
-   `/codexpiator-audit` once real code exists to check against these
+   `/codexpiator:audit` once real code exists to check against these
    conventions.

@@ -120,7 +120,7 @@ convention choice — record it durably instead of re-asking every time.
 
 After completing a meaningful chunk of work (a feature, a non-trivial
 refactor, a batch of related changes — not every single small edit),
-suggest running `/codexpiator-audit` to catch what a focused
+suggest running `/codexpiator:audit` to catch what a focused
 in-the-moment implementation pass can miss: bugs, logical
 inconsistencies, unused dependencies, excessive boilerplate,
 duplicated code, and security problems across what was just built.

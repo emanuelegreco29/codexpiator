@@ -22,7 +22,7 @@ checks) live in `codexpiator-security/dependency-and-supply-chain.md`
 
 ## Ask when useful; suggest an audit after significant work
 
-See `shared/collaboration-and-audit-practice.md` — ask (via
+See `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md` — ask (via
 `AskUserQuestion` when available) before a genuinely consequential
-infrastructure/deploy decision, and suggest `/codexpiator-audit` after
+infrastructure/deploy decision, and suggest `/codexpiator:audit` after
 significant pipeline or infrastructure changes.

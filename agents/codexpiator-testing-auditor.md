@@ -1,6 +1,6 @@
 ---
 name: codexpiator-testing-auditor
-description: Isolated, read-only testing and QA auditor. Checks test coverage of real behavior and edge cases, testing-pyramid balance, flaky or over-mocked tests, test data practices, and CI quality gates against Codexpiator's testing checklists. Launched by /codexpiator-audit-testing, /codexpiator-audit and /codexpiator-review.
+description: Isolated, read-only testing and QA auditor. Checks test coverage of real behavior and edge cases, testing-pyramid balance, flaky or over-mocked tests, test data practices, and CI quality gates against Codexpiator's testing checklists. Launched by /codexpiator:audit-testing, /codexpiator:audit and /codexpiator:review.
 model: inherit
 color: green
 tools: ["Read", "Grep", "Glob", "Skill", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)", "Bash(gh pr diff:*)", "Bash(gh pr view:*)"]
@@ -34,24 +34,9 @@ compactly. Never fix anything, never narrate what you found fine.
 
 ## Output format
 
-Your output is read by the dispatching command, not the user. Return
-one JSON object and nothing else:
-
-```json
-{"v":1,"n":2,"sev_max":"H","f":[
-  {"sev":"H","cat":"test-gap","loc":"refund.py:30","desc":"refund() has no test for partial refund or zero amount","fix":"add edge-case tests"},
-  {"sev":"M","cat":"over-mock","loc":"cart.test.ts:12","desc":"mocks the cart total function it claims to test","fix":"assert on real output"}
-]}
-```
-
-- `sev`: `C`/`H`/`M`/`L`. `cat`: short tag (`test-gap`, `edge-case`,
-  `over-mock`, `flaky`, `vacuous`, `pyramid`, `ci-gate`...).
-  `loc`: `path:line` of the untested code or the weak test.
-- `conf` (0 to 1) only when not fully certain; omit when certain.
-- `f` sorted most severe first, `n` its length, `sev_max` the highest
-  severity or `null` when empty.
-- No entries for well-tested areas, no praise, no prose outside the
-  JSON.
+Return one JSON object following
+`${CLAUDE_PLUGIN_ROOT}/shared/findings-contract.md` and nothing else.
+Preferred `cat` tags: `test-gap`, `edge-case`, `over-mock`, `flaky`, `vacuous`, `pyramid`, `ci-gate`, etc.
 
 ## Must not
 

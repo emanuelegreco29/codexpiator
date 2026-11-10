@@ -40,7 +40,7 @@ relevant skill for its slice rather than picking just one.
 ## Long or complex work
 
 For anything substantial (multi-step, many files, spans multiple
-commits), see `shared/long-task-memory-and-superpowers.md` — write
+commits), see `${CLAUDE_PLUGIN_ROOT}/shared/long-task-memory-and-superpowers.md` — write
 resumable progress memory to a gitignored project directory, and use
 `superpowers:*` skills (writing-plans, executing-plans,
 systematic-debugging, TDD, etc.) when available instead of improvising
@@ -48,16 +48,16 @@ the process.
 
 ## Ask when useful; suggest an audit after significant work
 
-See `shared/collaboration-and-audit-practice.md` — ask a targeted
+See `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md` — ask a targeted
 clarifying question (via `AskUserQuestion` when available) when a
-request has real ambiguity, and suggest `/codexpiator-audit` after
+request has real ambiguity, and suggest `/codexpiator:audit` after
 completing significant work. Every `codexpiator-*` skill follows this.
 
 ## Before answering anything design- or security-audit-shaped
 
 If the request involves visual design, motion/animation, a broad UI
 polish pass, redesigning an existing UI, or a deep security audit,
-read `shared/external-skills-registry.md` first. It has the exact
+read `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md` first. It has the exact
 procedure for checking whether a more specialized external skill is
 available, and the fallback to use when it isn't. Don't skip this
 check just because `codexpiator-frontend` or `codexpiator-security`

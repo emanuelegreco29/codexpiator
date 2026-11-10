@@ -1,7 +1,7 @@
 # Audit Dispatch Procedure
 
-Shared procedure for every `/codexpiator-audit*` command and for
-`/codexpiator-review`. Each command says which auditor agent(s) it
+Shared procedure for every `/codexpiator:audit*` command and for
+`/codexpiator:review`. Each command says which auditor agent(s) it
 launches; this file says how.
 
 Launching an agent means a real call to the Agent/Task tool, never
@@ -10,7 +10,7 @@ reading files yourself and narrating what an audit would find.
 ## 1. Scope
 
 - If the user gave a path argument, scope to it.
-- For `/codexpiator-review`, scope is the diff (see that command).
+- For `/codexpiator:review`, scope is the diff (see that command).
 - Otherwise scope is the whole project. Skip build output,
   `node_modules`, vendored code, lockfiles' contents and
   `.codexpiator/`.
@@ -20,7 +20,7 @@ reading files yourself and narrating what an audit would find.
 
 ## 2. Models
 
-Resolve the model per auditor following `shared/model-routing.md`:
+Resolve the model per auditor following `${CLAUDE_PLUGIN_ROOT}/shared/model-routing.md`:
 read the project's recorded preference, ask once with
 `AskUserQuestion` if there is none, then pass the `model` parameter
 accordingly (omit it for the session default).
@@ -38,7 +38,7 @@ anything.
 
 ## 4. Translate the result
 
-Auditors return compact JSON (`{"v":1,"n":...,"sev_max":...,"f":[...]}`),
+Auditors return compact JSON per `${CLAUDE_PLUGIN_ROOT}/shared/findings-contract.md`,
 an agent-to-agent channel. Never show the raw JSON. Merge all `f`
 arrays, drop duplicates (same `loc` and same problem reported by two
 auditors keeps the higher severity), sort by severity (C, H, M, L), and
@@ -55,4 +55,4 @@ in one line.
 
 Offer to fix the findings (highest severity first) only after showing
 the list. Long audits follow
-`shared/long-task-memory-and-superpowers.md` for progress memory.
+`${CLAUDE_PLUGIN_ROOT}/shared/long-task-memory-and-superpowers.md` for progress memory.

@@ -66,6 +66,6 @@ find yourself synchronizing one piece of state from another with an
 effect, that's almost always a sign the second value should be
 computed, not stored.
 
-See `shared/stack-recommendations.md` for React/Vue-specific notes on
+See `${CLAUDE_PLUGIN_ROOT}/shared/stack-recommendations.md` for React/Vue-specific notes on
 where server-state caching and reactivity idioms live in each
 framework.

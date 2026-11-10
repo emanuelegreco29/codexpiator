@@ -86,6 +86,6 @@ If `superpowers` isn't installed in the environment, say so plainly
 and fall back to Codexpiator's own equivalent practice (the relevant
 `codexpiator-*` file covers the same ground in condensed form) rather
 than blocking — the same soft-check-and-fallback pattern as
-`shared/external-skills-registry.md`, applied to this specific skill
+`${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`, applied to this specific skill
 family because of how directly it improves process efficiency when
 present.

@@ -62,7 +62,7 @@ instead of repeating stack idioms in every file that touches them.
   what it flags before considering Python backend work done.
   **Before writing any Python code on a project without Ruff already
   configured**, check (via `WebSearch`, with the user's permission
-  per `shared/collaboration-and-audit-practice.md`) the current
+  per `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md`) the current
   recommended Ruff rule set and set up `pyproject.toml`/`ruff.toml`
   with it first — Ruff's rule categories and defaults evolve, so
   don't configure it from memory of an older recommended set when a

@@ -22,15 +22,13 @@ trying to hold all of it in one place.
 | `accessibility.md` | Semantic HTML, ARIA, keyboard nav, contrast, focus management |
 | `seo-and-launch-checklist.md` | Pre-launch pass: metadata, SEO tags, legal pages, conversion essentials |
 | `seo-strategy-and-ai-visibility.md` | Deep SEO strategy + GEO: ranking in Google/Bing/DuckDuckGo and being cited by AI answer engines |
-| `external-skills-map.md` | Whether a specialized design skill should lead instead |
 
 ## Before any visually-led answer
 
 If the task is primarily about visual design quality, motion, a broad
-polish pass, or auditing an existing UI, check `external-skills-map.md`
+polish pass, or auditing an existing UI, check `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`
 first — a specialized external skill may be a better fit than this
-skill's own guidance, and that file (plus
-`shared/external-skills-registry.md`) has the procedure for checking.
+skill's own guidance, and that file has the procedure for checking.
 This is not optional for design-heavy work: attempt to consult the
 relevant external design skill(s) before finalizing an answer, not
 only as a fallback when you happen to remember to check.
@@ -75,7 +73,7 @@ fixed by an existing design system in the repo):
 - **Formatting & typography conventions** — type scale approach,
   heading hierarchy style, content density (spacious vs. compact).
 - **Animations & motion** — none/minimal, subtle micro-interactions,
-  or expressive/bold motion (bridges to `external-skills-map.md`'s
+  or expressive/bold motion (bridges to `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`'s
   `design-motion-principles` entry for the deeper implementation).
 - **Colors** — a specific palette/brand colors if they have one, or a
   direction (warm/cool/neutral, monochrome vs. saturated) if not.
@@ -93,12 +91,12 @@ subagent should match against.
 
 Don't bulk-download the whole collection. Use the Task/Agent tool to
 launch the `codexpiator-design-ref-picker` agent (model per
-`shared/model-routing.md`), which browses the repo's index and picks the docs
+`${CLAUDE_PLUGIN_ROOT}/shared/model-routing.md`), which browses the repo's index and picks the docs
 that actually match the current project's scope *and* the preferences
 just gathered (stack, kind of UI, and the stated style/motion/color/
 layout/font direction); save only those selected docs to
 `.codexpiator/design-refs/` (see
-`shared/long-task-memory-and-superpowers.md` for the shared
+`${CLAUDE_PLUGIN_ROOT}/shared/long-task-memory-and-superpowers.md` for the shared
 `.codexpiator/` directory convention — gitignore it immediately if
 it's the first thing written there). Read from that local cache on
 later reference within the same project instead of re-fetching.
@@ -109,7 +107,7 @@ Before considering frontend work done:
 1. **Consult every relevant file in this skill** (`component-
    architecture.md`, `state-management.md`, `styling-and-css.md`,
    etc. — whichever apply to the change) plus any applicable external
-   design skill from `external-skills-map.md`, not just the first one
+   design skill from `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`, not just the first one
    that seems relevant.
 2. **Run Prettier (or the project's configured formatter) and a type
    check** and resolve everything they flag. Never report frontend
@@ -125,8 +123,8 @@ Before considering frontend work done:
    — and run the full test suite before calling the work done, not
    just the new test file in isolation. See `frontend-testing.md` and
    `codexpiator-testing-qa/tdd-workflow.md`.
-6. Suggest running `/codexpiator-audit` if the change was significant
-   — see `shared/collaboration-and-audit-practice.md`.
+6. Suggest running `/codexpiator:audit` if the change was significant
+   — see `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md`.
 7. If the project is still using a placeholder/default favicon or
    brand images (per `seo-and-launch-checklist.md`), remind the user
    at the end of the work to provide their own custom favicon/images —

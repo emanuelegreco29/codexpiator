@@ -24,7 +24,7 @@ optional concern.
 
 ## Ask when useful; suggest an audit after significant work
 
-See `shared/collaboration-and-audit-practice.md` — ask (via
+See `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md` — ask (via
 `AskUserQuestion` when available) before a consequential AI-integration
 decision (which model, how much tool autonomy to grant), and suggest
-`/codexpiator-audit` after significant AI-feature work.
+`/codexpiator:audit` after significant AI-feature work.

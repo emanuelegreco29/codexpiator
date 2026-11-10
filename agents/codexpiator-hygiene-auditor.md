@@ -1,8 +1,8 @@
 ---
 name: codexpiator-hygiene-auditor
-description: Isolated, read-only repo hygiene and DX auditor. Checks gitignore coverage of tool artifacts, README and onboarding, .env.example sync, dead and commented-out code, unused dependencies, documentation quality, commit and PR conventions, and branch practice against Codexpiator's DX/git checklists. Launched by /codexpiator-audit-hygiene and /codexpiator-audit.
+description: Isolated, read-only repo hygiene and DX auditor. Checks gitignore coverage of tool artifacts, README and onboarding, .env.example sync, dead and commented-out code, unused dependencies, documentation quality, commit and PR conventions, and branch practice against Codexpiator's DX/git checklists. Launched by /codexpiator:audit-hygiene and /codexpiator:audit.
 model: inherit
-color: cyan
+color: pink
 tools: ["Read", "Grep", "Glob", "Skill", "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)", "Bash(git branch:*)", "Bash(git ls-files:*)", "Bash(git check-ignore:*)", "Bash(gh pr diff:*)", "Bash(gh pr view:*)"]
 ---
 
@@ -37,24 +37,11 @@ problems compactly. Never fix anything, never narrate what is fine.
 
 ## Output format
 
-Your output is read by the dispatching command, not the user. Return
-one JSON object and nothing else:
+Return one JSON object following
+`${CLAUDE_PLUGIN_ROOT}/shared/findings-contract.md` and nothing else.
+Preferred `cat` tags: `gitignore`, `env-example`, `readme`, `dead-code`, `unused-dep`, `docs`, `commits`, `lockfile`, `branch`, etc.
 
-```json
-{"v":1,"n":2,"sev_max":"M","f":[
-  {"sev":"M","cat":"gitignore","loc":".gitignore:1","desc":".playwright/ exists but is not ignored","fix":"add .playwright/"},
-  {"sev":"L","cat":"dead-code","loc":"utils.js:30","desc":"commented-out block","fix":"delete it"}
-]}
-```
-
-- `sev`: `C`/`H`/`M`/`L` (a committed live secret is `C`). `cat`: short
-  tag (`gitignore`, `env-example`, `readme`, `dead-code`, `unused-dep`,
-  `docs`, `commits`, `lockfile`, `branch`...). `loc`: `path:line`, or
-  `path` alone for whole-file findings.
-- `conf` (0 to 1) only when not fully certain; omit when certain.
-- `f` sorted most severe first, `n` its length, `sev_max` the highest
-  severity or `null` when empty.
-- No entries for clean areas, no praise, no prose outside the JSON.
+A committed live secret is `C`.
 
 ## Must not
 

@@ -19,14 +19,13 @@ specialized security audit when one is available.
 | `infrastructure-and-access-control.md` | Cloud/DB permissions, admin routes, debug tools, headers, CORS, rate limits, monitoring, backups |
 | `business-logic-and-webhooks.md` | Payments, webhooks, business-logic abuse, race conditions |
 | `security-testing.md` | How to actually test security controls, not just implement them |
-| `external-skills-map.md` | When `security-review` should lead instead of this skill |
 
 ## Mandatory: consult the specialized skill first, not as a fallback
 
 For any security-sensitive work (auth, payments, user input handling,
 infrastructure config, anything pre-merge on a security-critical
 path), attempt to invoke `security-review` (see
-`shared/external-skills-registry.md` for the confirmed install path)
+`${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md` for the confirmed install path)
 **before** finalizing the change — this skill's own checklists are the
 fast baseline and the fallback when that specialized skill genuinely
 isn't available, not a substitute you reach for by default instead of
@@ -42,7 +41,7 @@ provides no protection.
 
 ## Ask when useful; suggest an audit after significant work
 
-See `shared/collaboration-and-audit-practice.md` — ask a targeted
+See `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md` — ask a targeted
 clarifying question (via `AskUserQuestion` when available) when a
 security trade-off genuinely needs the user's input, and suggest
-`/codexpiator-audit` after significant security-sensitive work.
+`/codexpiator:audit` after significant security-sensitive work.

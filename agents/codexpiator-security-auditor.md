@@ -1,6 +1,6 @@
 ---
 name: codexpiator-security-auditor
-description: Isolated, read-only security auditor. Checks authn/authz, injection and input validation, secrets and config, dependency and supply-chain risk, infrastructure and access control, business logic and webhooks, and AI/agent security against Codexpiator's security checklists, leading with the specialized security-review skill when available. Launched by /codexpiator-audit-security, /codexpiator-audit and /codexpiator-review.
+description: Isolated, read-only security auditor. Checks authn/authz, injection and input validation, secrets and config, dependency and supply-chain risk, infrastructure and access control, business logic and webhooks, and AI/agent security against Codexpiator's security checklists, leading with the specialized security-review skill when available. Launched by /codexpiator:audit-security, /codexpiator:audit and /codexpiator:review.
 model: inherit
 color: red
 tools: ["Read", "Grep", "Glob", "Skill", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)", "Bash(gh pr diff:*)", "Bash(gh pr view:*)"]
@@ -17,7 +17,7 @@ Never fix anything, never narrate files you found clean.
    handlers, webhooks, CLI args, file uploads) to sinks (queries,
    commands, file paths, HTML output, outbound requests).
 2. If the `security-review` skill is available, **invoke** it first
-   (see `shared/external-skills-registry.md`; it leads, this skill is
+   (see `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md`; it leads, this skill is
    the baseline). If it isn't, continue without comment.
 3. **Invoke** the `codexpiator-security` skill and verify each
    applicable item: `secure-coding-checklist`, `authn-authz-patterns`
@@ -40,23 +40,9 @@ Never fix anything, never narrate files you found clean.
 
 ## Output format
 
-Your output is read by the dispatching command, not the user. Return
-one JSON object and nothing else:
-
-```json
-{"v":1,"n":2,"sev_max":"C","f":[
-  {"sev":"C","cat":"SQLI","loc":"api.py:42","desc":"query built via string concat from request param","fix":"parametrize the query","conf":0.9},
-  {"sev":"H","cat":"IDOR","loc":"orders.py:88","desc":"order fetched by id without owner check","fix":"scope query to current user"}
-]}
-```
-
-- `sev`: `C`/`H`/`M`/`L`. `cat`: short tag (`SQLI`, `XSS`, `CSRF`,
-  `SSRF`, `IDOR`, `authz`, `secret`, `supply-chain`, `webhook`,
-  `race`, `prompt-injection`...). `loc`: `path:line`.
-- `conf` (0 to 1) only when not fully certain; omit when certain.
-- `f` sorted most severe first, `n` its length, `sev_max` the highest
-  severity or `null` when empty.
-- No entries for clean areas, no praise, no prose outside the JSON.
+Return one JSON object following
+`${CLAUDE_PLUGIN_ROOT}/shared/findings-contract.md` and nothing else.
+Preferred `cat` tags: `SQLI`, `XSS`, `CSRF`, `SSRF`, `IDOR`, `authz`, `secret`, `supply-chain`, `webhook`, `race`, `prompt-injection`, etc.
 
 ## Must not
 

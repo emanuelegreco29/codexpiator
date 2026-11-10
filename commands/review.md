@@ -27,7 +27,7 @@ available.
    - repo hygiene is only checked if the diff touches ignore files,
      README, env examples or dependency manifests:
      `codexpiator-hygiene-auditor`
-3. Launch them following `shared/audit-dispatch.md`, passing the diff
+3. Launch them following `${CLAUDE_PLUGIN_ROOT}/shared/audit-dispatch.md`, passing the diff
    command as their scope so each reads only the changed code.
 4. Output one line per finding: `file:line — severity — problem — fix`.
    No praise, no scope creep, no restating what's already correct.

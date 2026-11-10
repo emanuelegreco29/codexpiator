@@ -36,7 +36,7 @@ not, call `AskUserQuestion` once with these options:
    session default for each agent that will run.
 
 Persist the answer per
-`shared/collaboration-and-audit-practice.md`'s preference-persistence
+`${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md`'s preference-persistence
 rule: one line in the project's `CLAUDE.md`, e.g.
 `- Subagent models: recommended`, `- Subagent models: default`, or
 `- Subagent models: custom (security=opus, hygiene=haiku, others=default)`.

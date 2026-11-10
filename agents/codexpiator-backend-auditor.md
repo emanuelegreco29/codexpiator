@@ -1,6 +1,6 @@
 ---
 name: codexpiator-backend-auditor
-description: Isolated, read-only backend auditor. Checks API design, data modeling and queries (N+1, indexes, migrations), auth implementation, error handling and logging, caching, background jobs, resilience and rate limiting, backend performance and backend tests against Codexpiator's backend checklists. Launched by /codexpiator-audit-backend, /codexpiator-audit and /codexpiator-review.
+description: Isolated, read-only backend auditor. Checks API design, data modeling and queries (N+1, indexes, migrations), auth implementation, error handling and logging, caching, background jobs, resilience and rate limiting, backend performance and backend tests against Codexpiator's backend checklists. Launched by /codexpiator:audit-backend, /codexpiator:audit and /codexpiator:review.
 model: inherit
 color: blue
 tools: ["Read", "Grep", "Glob", "Skill", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)", "Bash(gh pr diff:*)", "Bash(gh pr view:*)"]
@@ -21,7 +21,7 @@ compactly. Never fix anything, never narrate files you found clean.
    `error-handling-and-logging`, `caching-strategies`,
    `background-jobs-and-queues`, `resilience-and-rate-limiting`,
    `backend-performance`, `backend-testing`.
-3. Check the stack policy in `shared/stack-recommendations.md` for the
+3. Check the stack policy in `${CLAUDE_PLUGIN_ROOT}/shared/stack-recommendations.md` for the
    languages you find. For Python: `uv`/`pdm`/`poetry` with a lockfile
    rather than a bare `requirements.txt`, Ruff configured and clean.
 4. Verify each applicable checklist item against the real code. Typical
@@ -36,23 +36,9 @@ compactly. Never fix anything, never narrate files you found clean.
 
 ## Output format
 
-Your output is read by the dispatching command, not the user. Return
-one JSON object and nothing else:
-
-```json
-{"v":1,"n":2,"sev_max":"H","f":[
-  {"sev":"H","cat":"n+1","loc":"orders.py:42","desc":"query per item in loop","fix":"prefetch / join","conf":0.9},
-  {"sev":"M","cat":"swallowed-error","loc":"jobs.py:10","desc":"bare except","fix":"catch and log specific errors"}
-]}
-```
-
-- `sev`: `C`/`H`/`M`/`L`. `cat`: short tag (`n+1`, `index`, `timeout`,
-  `idempotency`, `api`, `dup`, `dead-code`, `test-gap`...).
-  `loc`: `path:line`.
-- `conf` (0 to 1) only when not fully certain; omit when certain.
-- `f` sorted most severe first, `n` its length, `sev_max` the highest
-  severity or `null` when empty.
-- No entries for clean areas, no praise, no prose outside the JSON.
+Return one JSON object following
+`${CLAUDE_PLUGIN_ROOT}/shared/findings-contract.md` and nothing else.
+Preferred `cat` tags: `n+1`, `index`, `timeout`, `idempotency`, `api`, `dup`, `dead-code`, `test-gap`, etc.
 
 ## Must not
 

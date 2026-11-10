@@ -52,5 +52,5 @@ unhelpful filename.
 
 This file is a fast baseline pass, not an exhaustive guideline
 compliance check. For a pre-ship audit against the full interface
-guidelines, check `external-skills-map.md` — `web-design-guidelines`
+guidelines, check `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md` — `web-design-guidelines`
 (when available) is the specialized skill for that depth.

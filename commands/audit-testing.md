@@ -5,8 +5,8 @@ allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
 ---
 
 Audit the tests by launching the `codexpiator-testing-auditor` agent
-through the Agent/Task tool, following `shared/audit-dispatch.md`
-(scope, model choice per `shared/model-routing.md`, launch, result
+through the Agent/Task tool, following `${CLAUDE_PLUGIN_ROOT}/shared/audit-dispatch.md`
+(scope, model choice per `${CLAUDE_PLUGIN_ROOT}/shared/model-routing.md`, launch, result
 translation). `$1`, if given, is the path to scope to.
 
 The auditor judges tests by reading them; it does not run the suite.

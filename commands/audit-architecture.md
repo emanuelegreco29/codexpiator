@@ -6,8 +6,8 @@ allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
 
 Audit the architecture by launching the
 `codexpiator-architecture-auditor` agent through the Agent/Task tool,
-following `shared/audit-dispatch.md` (scope, model choice per
-`shared/model-routing.md`, launch, result translation). `$1`, if given,
+following `${CLAUDE_PLUGIN_ROOT}/shared/audit-dispatch.md` (scope, model choice per
+`${CLAUDE_PLUGIN_ROOT}/shared/model-routing.md`, launch, result translation). `$1`, if given,
 is the path to scope to.
 
 Architecture findings are trade-offs: present each with the cost it

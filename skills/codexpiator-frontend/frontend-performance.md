@@ -56,5 +56,5 @@ durations short (roughly 100-300ms for most UI feedback) and prefer
 animating cheap properties (`transform`, `opacity`) over properties
 that trigger layout recalculation. If the concern is motion *quality*
 and *design* rather than raw performance cost, check
-`external-skills-map.md` — `design-motion-principles` (when available)
+`${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md` — `design-motion-principles` (when available)
 is the specialized skill for that.

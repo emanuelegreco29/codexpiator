@@ -10,7 +10,7 @@ or changing CI/CD; they're two halves of the same system.
 - The full test suite passes (not just the tests touched by the
   change).
 - Lint/formatting checks pass (Ruff for Python, the project's linter/
-  Prettier for JS/TS — see `shared/stack-recommendations.md` and
+  Prettier for JS/TS — see `${CLAUDE_PLUGIN_ROOT}/shared/stack-recommendations.md` and
   `codexpiator-frontend/SKILL.md`'s pre-completion gate).
 - Type checking passes, for any typed language/stack.
 - A dependency vulnerability scan passes (see

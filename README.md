@@ -45,7 +45,7 @@ Codexpiator ships no hooks and no scripts: it never runs code on its
 own and never restricts which Bash commands Claude can run. Everything
 is done by Claude, as visible actions, after asking you.
 
-`/codexpiator-setup` asks you, **once per project**:
+`/codexpiator:setup` asks you, **once per project**:
 
 - **Commit attribution**: keep Claude's attribution (`Co-Authored-By`
   line, "Generated with Claude Code" footer) or not. If not, it detects
@@ -62,7 +62,7 @@ is done by Claude, as visible actions, after asking you.
 - [What's inside](#-whats-inside)
 - [Topic skills](#-topic-skills)
 - [Commands](#-commands)
-- [Agent](#-agent)
+- [Agents](#-agents)
 - [External skills it plugs into](#-external-skills-it-plugs-into)
 - [Stack policy](#-stack-policy)
 
@@ -92,22 +92,25 @@ is done by Claude, as visible actions, after asking you.
 
 | Command | What it does |
 |---|---|
-| `/codexpiator-audit` | Full audit: launches every relevant specialist auditor in parallel and merges the findings |
-| `/codexpiator-audit-frontend` | Components, state, CSS, forms, a11y, performance, SEO |
-| `/codexpiator-audit-backend` | API, data, auth implementation, errors, caching, jobs, resilience |
-| `/codexpiator-audit-security` | Authn/authz, injection, secrets, dependencies, infra, webhooks, AI safety |
-| `/codexpiator-audit-testing` | Coverage of real behavior, edge cases, flaky or over-mocked tests, CI gates |
-| `/codexpiator-audit-architecture` | Structure, coupling, patterns, API contracts, scalability, service boundaries |
-| `/codexpiator-audit-devops` | CI/CD, environments, Dockerfiles, observability, rollback, deployment |
-| `/codexpiator-audit-ai` | LLM calls, prompts, agent and tool safety, prompt injection, MCP |
-| `/codexpiator-audit-hygiene` | gitignore, README, `.env.example`, dead code, unused dependencies, commits |
-| `/codexpiator-setup` | Bootstraps baseline structure and conventions, and asks your attribution and subagent-model preferences once |
-| `/codexpiator-review` | Reviews a diff/PR by launching only the auditors the changed files call for; complements, never replaces, `/code-review` and `security-review` |
+| `/codexpiator:audit` | Full audit: launches every relevant specialist auditor in parallel and merges the findings |
+| `/codexpiator:audit-frontend` | Components, state, CSS, forms, a11y, performance, SEO |
+| `/codexpiator:audit-backend` | API, data, auth implementation, errors, caching, jobs, resilience |
+| `/codexpiator:audit-security` | Authn/authz, injection, secrets, dependencies, infra, webhooks, AI safety |
+| `/codexpiator:audit-testing` | Coverage of real behavior, edge cases, flaky or over-mocked tests, CI gates |
+| `/codexpiator:audit-architecture` | Structure, coupling, patterns, API contracts, scalability, service boundaries |
+| `/codexpiator:audit-devops` | CI/CD, environments, Dockerfiles, observability, rollback, deployment |
+| `/codexpiator:audit-ai` | LLM calls, prompts, agent and tool safety, prompt injection, MCP |
+| `/codexpiator:audit-hygiene` | gitignore, README, `.env.example`, dead code, unused dependencies, commits |
+| `/codexpiator:setup` | Bootstraps baseline structure and conventions, and asks your attribution and subagent-model preferences once |
+| `/codexpiator:review` | Reviews a diff/PR by launching only the auditors the changed files call for; complements, never replaces, `/code-review` and `security-review` |
 
 ## 🤖 Agents
 
 All auditors are read-only: no write access, ever. They report
-findings and never touch your code.
+findings and never touch your code. The audit commands that launch them
+are granted `Edit` only so the command itself can save your model
+preference to `CLAUDE.md` after asking you; it never edits your code
+unless you ask for fixes after seeing the findings.
 
 | Agent | Recommended model |
 |---|---|

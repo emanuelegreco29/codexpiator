@@ -27,7 +27,7 @@ the module changes, when they're not several directories away.
 For a long/complex procedure, don't rely on conversation context
 alone to survive an interruption — write resumable progress state to
 a gitignored project directory. See
-`shared/long-task-memory-and-superpowers.md` for the convention and
+`${CLAUDE_PLUGIN_ROOT}/shared/long-task-memory-and-superpowers.md` for the convention and
 when it's warranted (not for trivial changes).
 
 ## Consistent naming as a force multiplier

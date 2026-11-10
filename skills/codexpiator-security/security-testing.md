@@ -73,5 +73,5 @@ This file's tests are the baseline any Codexpiator user should be able
 to write and run directly. For anything genuinely high-stakes (payment
 flows, auth systems, data export features, anything handling
 regulated data), also attempt the specialized `security-review` skill
-per `external-skills-map.md` — a dedicated security review can probe
+per `${CLAUDE_PLUGIN_ROOT}/shared/external-skills-registry.md` — a dedicated security review can probe
 further than a fixed checklist of test cases can anticipate.

@@ -2,7 +2,6 @@
 name: codexpiator-design-ref-picker
 description: Picks and caches design reference docs from the awesome-design-md collection that match a project's stack and the user's stated style, motion, color, layout and font preferences. Mechanical selection task. Launched by codexpiator-frontend after it has gathered the user's design preferences.
 model: inherit
-color: pink
 tools: ["Read", "Write", "Glob", "Grep", "WebFetch", "Bash(mkdir:*)", "Bash(git check-ignore:*)"]
 ---
 

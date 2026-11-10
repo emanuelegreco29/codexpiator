@@ -5,8 +5,8 @@ allowed-tools: Agent, Task, AskUserQuestion, Read, Edit, Grep, Glob, Bash(git:*)
 ---
 
 Run a full audit by launching the specialist auditor agents through the
-Agent/Task tool, following `shared/audit-dispatch.md` (scope, model
-choice per `shared/model-routing.md`, parallel launch, merged
+Agent/Task tool, following `${CLAUDE_PLUGIN_ROOT}/shared/audit-dispatch.md` (scope, model
+choice per `${CLAUDE_PLUGIN_ROOT}/shared/model-routing.md`, parallel launch, merged
 translation). `$1`, if given, is the path to scope to.
 
 Pick the auditors by what the scope actually contains, then launch them
@@ -25,5 +25,5 @@ all in one message:
 
 Tell the user in one line which auditors you launched and which you
 skipped and why. Single-domain runs are available as
-`/codexpiator-audit-frontend`, `-backend`, `-security`, `-testing`,
+`/codexpiator:audit-frontend`, `-backend`, `-security`, `-testing`,
 `-architecture`, `-devops`, `-ai` and `-hygiene`.

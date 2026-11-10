@@ -18,8 +18,8 @@ decisions.
 
 ## Ask when useful; suggest an audit after significant work
 
-See `shared/collaboration-and-audit-practice.md` — architectural
+See `${CLAUDE_PLUGIN_ROOT}/shared/collaboration-and-audit-practice.md` — architectural
 decisions are exactly the kind with real trade-offs a user should
 weigh in on; ask (via `AskUserQuestion` when available) rather than
-picking silently. Suggest `/codexpiator-audit` after a significant
+picking silently. Suggest `/codexpiator:audit` after a significant
 structural change.
