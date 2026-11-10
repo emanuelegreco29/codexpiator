@@ -22,7 +22,7 @@ not to simulate the outcome narratively. Concretely:
   (`component-architecture.md` referenced from `codexpiator-frontend`,
   for example) is meant to be read directly — that distinction is
   what separates a resource file from a separate skill.
-- To run the **`codexpiator-reviewer` agent** (or any subagent), use
+- To run a **`codexpiator-*-auditor` agent** (or any subagent), use
   the environment's actual subagent-launching tool (commonly called
   the Task or Agent tool) — don't describe what the agent would find
   instead of actually launching it.

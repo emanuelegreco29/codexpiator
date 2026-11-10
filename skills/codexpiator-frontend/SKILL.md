@@ -92,7 +92,8 @@ decided — the preferences gathered here are what the selection
 subagent should match against.
 
 Don't bulk-download the whole collection. Use the Task/Agent tool to
-launch a subagent that browses the repo's index and picks the docs
+launch the `codexpiator-design-ref-picker` agent (model per
+`shared/model-routing.md`), which browses the repo's index and picks the docs
 that actually match the current project's scope *and* the preferences
 just gathered (stack, kind of UI, and the stated style/motion/color/
 layout/font direction); save only those selected docs to

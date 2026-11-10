@@ -29,13 +29,15 @@ Codexpiator's guidance.
    a type checker, and the folder-per-component convention are
    reflected in the scaffolded structure.
 6. Attribution question, asked **once per project**. Skip it if
-   `.claude/settings.json` already has an `attribution` key, or
-   `.codexpiator/allow-ai-attribution` exists. Otherwise call `AskUserQuestion`: should commits and PRs
-   keep Claude's attribution (the `Co-Authored-By` trailer and
-   "Generated with Claude Code" footer)?
-   - **Keep it**: create an empty `.codexpiator/allow-ai-attribution`
-     file (this disables the plugin's attribution-blocking hook for
-     this project) and change nothing else.
+   `.claude/settings.json` already has an `attribution` key, or the
+   project's `CLAUDE.md` has a `Commit attribution:` line under
+   `## Codexpiator preferences`. Otherwise call `AskUserQuestion`:
+   should commits and PRs keep Claude's attribution (the
+   `Co-Authored-By` trailer and "Generated with Claude Code" footer)?
+   - **Keep it**: record `- Commit attribution: keep` under
+     `## Codexpiator preferences` in the project's `CLAUDE.md`
+     (create the section if missing) so it isn't asked again, and
+     change nothing else.
    - **Remove it**: detect the Claude Code version by running
      `claude --version`, then merge into `.claude/settings.json`
      (create it if missing, preserve every existing key):
@@ -44,7 +46,13 @@ Codexpiator's guidance.
        `"attribution": {"commit": "", "pr": "", "sessionUrl": false}`
      Compare versions numerically per segment (2.1.281 > 2.1.99),
      not as strings.
-   Never re-ask on later runs.
-7. Report exactly what was created/left alone, and suggest
+   Never re-ask on later runs. This only edits settings the user
+   approved; it does not install hooks or scripts, and it never
+   restricts which Bash commands Claude may run.
+7. Subagent models question, asked **once per project**, following
+   `shared/model-routing.md` (skip if a `Subagent models:` line is
+   already recorded in `CLAUDE.md`): recommended models, session
+   default, or choose per agent. Record the answer as that file says.
+8. Report exactly what was created/left alone, and suggest
    `/codexpiator-audit` once real code exists to check against these
    conventions.
